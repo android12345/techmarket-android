@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dip"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dip"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/trm" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription=""
+                    android:src="@drawable/logo" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/register_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:background="@drawable/register_bg"
+                android:gravity="center_horizontal"
+                android:padding="10dip" >
+
+                <EditText
+                    android:id="@+id/et_register_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/qq_register"
+                    android:background="@drawable/register_et_1"
+                    android:focusable="true"
+                    android:hint="用户名"
+                    android:paddingLeft="5dip"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/et_register_phonenum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/et_register_username"
+                    android:background="@drawable/register_et_2"
+                    android:hint="手机号"
+                    android:inputType="textPassword"
+                    android:maxLength="15"
+                    android:paddingLeft="5dip"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/et_register_userpass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/et_register_phonenum"
+                    android:background="@drawable/register_et_3"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:maxLength="15"
+                    android:paddingLeft="5dip"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/et_register_confiruserpass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/et_register_userpass"
+                    android:background="@drawable/register_et_4"
+                    android:hint="确认密码"
+                    android:inputType="textPassword"
+                    android:maxLength="15"
+                    android:paddingLeft="5dip"
+                    android:singleLine="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dip"
+                >
+
+                  <ImageView
+                    android:id="@+id/bt_register_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:layout_alignParentLeft="true"
+                    android:src="@drawable/register_button_register_selector" />
+                <ImageView
+                    android:id="@+id/bt_register_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    
+                    android:src="@drawable/register_button_cancel_selector" />
+
+              
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!--
+         <ImageView
+        style="@style/register_image_bar"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/nothing" />
+        -->
+    </ScrollView>
+
+</RelativeLayout>

@@ -6,11 +6,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.youdao.techmarket.JpushManager;
 import com.youdao.techmarket.R;
+import com.youdao.techmarket.api.JpushManager;
 import com.youdao.techmarket.utils.DeviceUtils;
 
 /**

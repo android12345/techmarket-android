@@ -3,13 +3,13 @@ package com.youdao.techmarket;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.youdao.techmarket.api.JpushManager;
 import com.youdao.techmarket.utils.CommUtils;
 import com.youdao.techmarket.utils.DeviceUtils;
 

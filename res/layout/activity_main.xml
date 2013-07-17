@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+
+        <RadioGroup
+            android:id="@+id/main_radio"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/toolbar_bg"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1.0" >
+
+                <RadioButton
+                    android:id="@+id/radio_button_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dip"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableTop="@drawable/home_btn_bg_selector"
+                    android:gravity="center"
+                    android:paddingBottom="4dip"
+                    android:paddingTop="6dip"
+                    android:text="主页"
+                    android:textColor="@color/color_radiobutton"
+                    android:textSize="12sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1.0" >
+
+                <RadioButton
+                    android:id="@+id/radio_button_message"
+                    android:layout_width="fill_parent"
+                    android:layout_height="52dip"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:button="@null"
+                    android:drawableTop="@drawable/market_btn_bg_selector"
+                    android:gravity="center"
+                    android:paddingBottom="4dip"
+                    android:paddingTop="6dip"
+                    android:text="大市场"
+                    android:textColor="@color/color_radiobutton"
+                    android:textSize="12sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1.0" >
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1.0" >
+
+                <RadioButton
+                    android:id="@+id/radio_button_friend"
+                    android:layout_width="fill_parent"
+                    android:layout_height="52dip"
+                    android:background="@android:color/transparent"
+                    android:button="@null"
+                    android:drawableTop="@drawable/mime_btn_bg_selector"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="4dip"
+                    android:paddingTop="6dip"
+                    android:text="我的"
+                    android:textColor="@color/color_radiobutton"
+                    android:textSize="12sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1.0" >
+
+                <RadioButton
+                    android:id="@+id/radio_button_more"
+                    android:layout_width="fill_parent"
+                    android:layout_height="52dip"
+                    android:background="@android:color/transparent"
+                    android:button="@null"
+                    android:drawableTop="@drawable/more_btn_bg_selector"
+                    android:gravity="center"
+                    android:paddingBottom="4dip"
+                    android:paddingTop="6dip"
+                    android:text="更多"
+                    android:textColor="@color/color_radiobutton"
+                    android:textSize="12sp" />
+                <!--
+                       <TextView
+                            android:id="@+id/tv_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="5dip"
+                            android:background="@drawable/elem_bubble"
+                            android:gravity="center"
+                            android:textSize="8sp" />
+                -->
+            </FrameLayout>
+        </RadioGroup>
+        <!-- 把默认的选项卡隐藏掉，自己用RadioButton定义选项卡 -->
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:visibility="gone" >
+        </TabWidget>
+    </TabHost>
+
+    <FrameLayout
+        android:id="@+id/btn_ck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@drawable/toolbar_write_bg" >
+
+        <RadioButton
+            android:id="@+id/radio_button_proketinoo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="8dip"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/pronnice_btn_bg_selector"
+            android:button="@null"
+            android:text="掌上创新"
+            android:textSize="11sp"
+            android:textColor="@color/color_radiobutton"
+            android:gravity="center" />
+    </FrameLayout>
+
+</FrameLayout>

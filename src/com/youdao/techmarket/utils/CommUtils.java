@@ -1,6 +1,10 @@
 package com.youdao.techmarket.utils;
 
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -10,6 +14,8 @@ import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -140,4 +146,36 @@ public class CommUtils {
 		return version;
 	}
 
+	/**
+	 * 隐藏软键盘的方法
+	 * 
+	 * @param context
+	 *            要传入的上下文
+	 */
+	public static void hiddenSoft(Context context) {
+		// 取得输入方法的服务类
+		InputMethodManager imm = (InputMethodManager) context
+				.getSystemService(Context.INPUT_METHOD_SERVICE);
+		View view = ((Activity) context).getCurrentFocus();
+		if (view != null) {
+			imm.hideSoftInputFromWindow(view.getWindowToken(), 0);// 隐藏软键盘
+
+		}
+	}
+	/**
+	 * 显示软件盘的方法，这里要采用延时操作，不然会显示不了软键盘。主要是登录，注册时一进去就自动弹出键盘。
+	 */
+	public static void showSoft(final EditText editText) {
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+			public void run() {
+				InputMethodManager inputManager = (InputMethodManager) editText
+						.getContext().getSystemService(
+								Context.INPUT_METHOD_SERVICE);
+				inputManager.showSoftInput(editText, 0);
+			}
+
+		}, 50);
+
+	}
 }

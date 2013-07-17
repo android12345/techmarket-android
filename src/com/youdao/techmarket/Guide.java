@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.MotionEvent;
@@ -43,13 +44,15 @@ public class Guide implements OnTouchListener  {
 	
 	private Dialog guideDialog  ;
 	
-	
+	private SplashActivity devActivity ;
+	private Context context ;
 	private int lastX = 0;
 	
-	public Guide( Context context,final List<Integer> numguide,techmarket devActivity,final Dialog guideDialog) {
+	public Guide( Context context,final List<Integer> numguide,SplashActivity devActivity,final Dialog guideDialog) {
 		this.guideDialog = guideDialog ;
 		initUI(context, numguide);
-
+		this.devActivity = devActivity ;
+		this.context = context ;
 		for (int i = 0; i < numguide.size(); i++) {
 			ImageView iv = new ImageView(context);
 			iv.setImageResource(numguide.get(i)) ;
@@ -105,6 +108,9 @@ public class Guide implements OnTouchListener  {
 	}
 	private void dismissDialog(){
 		if (guideDialog != null && guideDialog.isShowing()) {
+			Intent intent = new Intent(context,MainActivity.class) ;
+			context.startActivity(intent);
+			devActivity.finish() ;
 			guideDialog.dismiss();
 			guideDialog = null;
 		}

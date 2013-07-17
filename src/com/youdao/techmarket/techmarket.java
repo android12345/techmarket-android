@@ -253,11 +253,11 @@ public class techmarket extends DroidGap implements OnClickListener {
 					WindowManager.LayoutParams.FLAG_FULLSCREEN,
 					WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
-		Guide guide = new Guide(this, images, this, guideDialog);
-		View view = guide.getView();
-		guideDialog.setContentView(view);
-		guideDialog.setCancelable(false);
-		guideDialog.show();
+//		Guide guide = new Guide(this, images, this, guideDialog);
+//		View view = guide.getView();
+//		guideDialog.setContentView(view);
+//		guideDialog.setCancelable(false);
+//		guideDialog.show();
 	}
 
 	/**
