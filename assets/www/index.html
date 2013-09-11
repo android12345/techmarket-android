@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html manifest="" lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova-2.7.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        
+        
+        
+<input type="button" name="button" value="录音" id="button1" onclick="record()" style="width:46%;text-align:center;height:50px"/>
+<input type="button" name="button" value="停止" id="button2" onclick="stop()" style="width:46%;text-align:center;height:50px"/>
+<input type="button" name="button" value="播放" id="button3" onclick="play()" style="width:46%;text-align:center;height:50px"/>
+
+<input type="button" name="button" value="添加闹钟1" id="button3" onclick="addaralm()" style="width:46%;text-align:center;height:50px"/>
+
+<br/>
+<input type="button" name="button" value="分享" id="button4" onclick="share()" style="width:46%;text-align:center;height:50px"/>
+<input type="button" name="button" value="注册微信" id="button5" onclick="registerwx()" style="width:46%;text-align:center;height:50px"/>
+<input type="button" name="button" value="注册友盟" id="button9" onclick="registerum()" style="width:46%;text-align:center;height:50px"/>
+
+<br/>
+<input type="button" name="button" value="检查更新" id="button6" onclick="update()" style="width:46%;text-align:center;height:50px"/>
+<br/>
+<input type="button" name="button" value="取得设备UUID" id="button7" onclick="getuuid()" style="width:46%;text-align:center;height:50px"/>
+<input type="button" name="button" value="Toast插件" id="button8" onclick="toast()" style="width:46%;text-align:center;height:50px"/>
+   
+  
+  <br> 
+ <input type="button" name="button" value="拨号插件" id="button8" onclick="callphone()" style="width:46%;text-align:center;height:50px"/>  
+    <input type="button" name="button" value="获取uid插件" id="button8" onclick="passuid()" style="width:46%;text-align:center;height:50px"/>  
+   
+   <br>
+   <input type="button" name="button" value="scan" id="button8" onclick="scan()" style="width:46%;text-align:center;height:50px"/>  
+   <div id="content"></div>
+   
+    <input type="button" name="button" value="取得用户token" id="button8" onclick="getuserinfo()" style="width:46%;text-align:center;height:50px"/>  
+    <input type="button" name="button" value="用户登录" id="button8" onclick="login()" style="width:46%;text-align:center;height:50px"/>  
+    
+   <div id="content"></div>
+   有道软件（西安）技术有限公司
+    </body>
+</html>
