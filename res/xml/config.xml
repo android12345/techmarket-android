@@ -31,7 +31,7 @@
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <!-- <content src="index.html" /> -->
-<content src="http://www.xayoudao.com/qujianglvyou/" />
+<!-- <content src="http://www.xayoudao.com/qujianglvyou/" /> -->
     <log level="DEBUG"/>
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
@@ -75,6 +75,12 @@
      <plugin name="Redirect" value="com.youdao.techmarket.plugin.Redirect"/>
      <!-- 获取用户id插件 -->
      <plugin name="GetApplicationInfo" value="com.youdao.techmarket.plugin.GetApplicationInfo"/>
+     
+     <!-- 取得登录后用户信息 -->
+     <plugin name="GetUserInfoPlugin" value="com.youdao.techmarket.plugin.GetUserInfoPlugin"/>
+     
+     <!-- 调用用户登录插件 -->
+     <plugin name="LoginPlugin" value="com.youdao.techmarket.plugin.LoginPlugin"/>
 </plugins>
 </cordova>
 

@@ -7,10 +7,12 @@ import java.util.TimerTask;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
+import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.youdao.techmarket.R;
+import com.youdao.techmarket.widgets.DefineCustomProgressDialog;
 
 
 public class CommUtils {
@@ -177,5 +180,51 @@ public class CommUtils {
 
 		}, 50);
 
+	}
+	
+	// 获取百度推送的AppKey
+    public static String getMetaValue(Context context, String metaKey) {
+        Bundle metaData = null;
+        String apiKey = null;
+        if (context == null || metaKey == null) {
+        	return null;
+        }
+        try {
+            ApplicationInfo ai = context.getPackageManager().getApplicationInfo(
+                    context.getPackageName(), PackageManager.GET_META_DATA);
+            if (null != ai) {
+                metaData = ai.metaData;
+            }
+            if (null != metaData) {
+            	apiKey = metaData.getString(metaKey);
+            }
+        } catch (NameNotFoundException e) {
+
+        }
+        return apiKey;
+    }
+	
+	
+	private static DefineCustomProgressDialog myprogressDialog = null;
+	
+	/**
+	 * 显示loading
+	 */
+	public static void startProgressDialog(Activity context ,String message){
+		
+			myprogressDialog = DefineCustomProgressDialog.createDialog(context);
+			myprogressDialog.setMessage(message);
+		
+		
+		myprogressDialog.show();
+	}
+	/**
+	 * 关闭loading
+	 */
+	public static void stopProgressDialog(){
+		if (myprogressDialog != null&&myprogressDialog.isShowing()){
+			myprogressDialog.dismiss();
+			myprogressDialog = null;
+		}
 	}
 }

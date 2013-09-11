@@ -14,9 +14,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="15dip"
             android:gravity="center"
-            android:layout_gravity="center_horizontal"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -41,16 +41,18 @@
 
             <RelativeLayout
                 android:id="@+id/register_bg"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
                 android:background="@drawable/register_bg"
                 android:gravity="center_horizontal"
                 android:padding="10dip" >
 
                 <EditText
                     android:id="@+id/et_register_username"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/qq_register"
                     android:background="@drawable/register_et_1"
@@ -61,31 +63,41 @@
 
                 <EditText
                     android:id="@+id/et_register_phonenum"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/et_register_username"
                     android:background="@drawable/register_et_2"
                     android:hint="手机号"
-                    android:inputType="textPassword"
+                    android:maxLength="15"
+                    android:paddingLeft="5dip"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/et_register_email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/et_register_phonenum"
+                    android:background="@drawable/register_et_3"
+                    android:hint="邮　箱"
                     android:maxLength="15"
                     android:paddingLeft="5dip"
                     android:singleLine="true" />
 
                 <EditText
                     android:id="@+id/et_register_userpass"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/et_register_phonenum"
+                    android:layout_below="@+id/et_register_email"
                     android:background="@drawable/register_et_3"
-                    android:hint="密码"
+                    android:hint="密　码"
                     android:inputType="textPassword"
                     android:maxLength="15"
                     android:paddingLeft="5dip"
                     android:singleLine="true" />
 
-                <EditText
+                <!-- <EditText
                     android:id="@+id/et_register_confiruserpass"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/et_register_userpass"
                     android:background="@drawable/register_et_4"
@@ -93,32 +105,30 @@
                     android:inputType="textPassword"
                     android:maxLength="15"
                     android:paddingLeft="5dip"
-                    android:singleLine="true" />
+                    android:singleLine="true" /> -->
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dip"
-                >
+                android:layout_marginLeft="19dip"
+                android:layout_marginRight="19dip"
+                android:layout_marginTop="5dip" >
 
-                  <ImageView
+                <ImageView
                     android:id="@+id/bt_register_register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                     android:layout_alignParentLeft="true"
+                    android:layout_alignParentLeft="true"
                     android:src="@drawable/register_button_register_selector" />
+
                 <ImageView
                     android:id="@+id/bt_register_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    
                     android:src="@drawable/register_button_cancel_selector" />
-
-              
-
             </RelativeLayout>
         </LinearLayout>
 

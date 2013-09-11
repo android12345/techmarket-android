@@ -7,14 +7,14 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
 
-import com.youdao.techmarket.utils.DeviceUtils;
-
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.util.Base64;
 import android.util.Log;
-import cn.jpush.android.api.JPushInterface;
+
+import com.youdao.techmarket.domain.User;
 /**
  * For developer startup JPush SDK  和取得　经纬度初始化
  * 
@@ -24,22 +24,55 @@ public class YouDaoApplication extends Application {
 	   private static final String TAG = "YouDaoApplication";
 	   
 	   private SharedPreferences mSharedPreferences; 
-	   
+	   private User user = null;
 
 	    @Override
 	    public void onCreate() {
 	    	 Log.d(TAG, "onCreate");
 	         super.onCreate();
 	 		
-	         JPushInterface.setDebugMode(true); 	//设置开启日志,发布时请关闭日志
-	         
-	         JPushInterface.init(this);     		// 初始化 JPush
-	         JPushInterface.setAliasAndTags(this, DeviceUtils.getUUID(this), null) ;//极光设置别名
 	         
 	         mSharedPreferences = getSharedPreferences("com.youdao.techmarket",
 	 				MODE_PRIVATE);
 	         
 	    }
+
+	    /**
+		 * 清除登录的用户信息
+		 */
+		public void clearUser() {
+			Editor editor = mSharedPreferences.edit();
+			editor.remove("login_user");
+			editor.commit();
+			user = null;
+			//  ("clearUser");
+		}
+
+		/**
+		 * 获取登录的用户信息
+		 */
+		public User getUser() {
+			if (user == null) {
+				user = (User) readObjectToShared(mSharedPreferences.getString(
+						"login_user", null));
+				//  ("getUser"
+				// + mSharedPreferences.getString("login_user", null));
+			}
+			return user;
+		}
+
+		/**
+		 * 记住登录的用户信息
+		 */
+		public void setUser(User user) {
+			this.user = user;
+			if (user != null) {
+				Editor editor = mSharedPreferences.edit();
+				editor.putString("login_user", saveObjectToShared(user));
+				editor.commit();
+				// System.out.println("getUser" + saveObjectToShared(user));
+			}
+		}
 	    
 	    
 	    /**

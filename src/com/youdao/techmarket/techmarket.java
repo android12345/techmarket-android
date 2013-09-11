@@ -56,7 +56,7 @@ import com.youdao.techmarket.utils.NetWorkUtils;
 public class techmarket extends DroidGap implements OnClickListener {
 
 	private BroadcastReceiver connectionReceiver;
-	private LocationProvider locationProvider =  null ;
+//	private LocationProvider locationProvider =  null ;
 
 	private static Handler handler = new Handler() { // 主线程
 		public void handleMessage(android.os.Message msg) {
@@ -91,13 +91,13 @@ public class techmarket extends DroidGap implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		Log.d("设备的UUID:", DeviceUtils.getUUID(this));
 		super.setIntegerProperty("loadUrlTimeoutValue", 10000); 
-		JpushReceiver.activity = this;
+		//JpushReceiver.activity = this;
 
 		Intent intent = this.getIntent();
         
-        locationProvider =  new LocationProvider(this) ;
-        
-        locationProvider.startLocation() ;
+//        locationProvider =  new LocationProvider(this) ;
+//        
+//        locationProvider.startLocation() ;
 
 		displaySplash();
 

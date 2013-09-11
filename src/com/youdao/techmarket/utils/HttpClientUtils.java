@@ -78,7 +78,24 @@ public class HttpClientUtils {
 		asyncClient.post(context, url, requestParams , responseHandler);
 	}
 
+	/**
+	 * 发起get请求访问
+	 * @param context
+	 * @param url 请求的地址
+	 * @param params 请求参数
+	 * @param responseHandler 回调接口
+	 */
+	public static void get(Context context, String url, RequestParams params,
+			AsyncHttpResponseHandler responseHandler) {
+		if (null == context) {
+			Log.e(TAG, "必须传入Context参数。");
+			return;
+		}
 
+		PersistentCookieStore cookieStore = new PersistentCookieStore(context);
+		asyncClient.setCookieStore(cookieStore);
+		asyncClient.get(url, params, responseHandler);
+	}
 
 	/**
 	 * 取消连接

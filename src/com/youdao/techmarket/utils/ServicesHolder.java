@@ -4,30 +4,22 @@ package com.youdao.techmarket.utils;
 import android.util.Log;
 import android.util.SparseArray;
 
-import com.youdao.techmarket.BuildConfig;
-
 /*
  * 服务器api地址的管理类
  * 根据运行的环境和模块，返回不同的api地址
  * http://api.ent.appmars.com  /v1    /tinyurl/build?url=$&level=1-5/5
- * 
- * http://api1.ent.appmars.com
- * http://api2.ent.appmars.com
- * http://api.ent.appmars.com
- * 
- * http://dev.ent.appmars.com
- * 
- * http://test.ent.appmars.com
+   http://market.xayoudao.com/apiproxy.php?action=register
  * 
  * 
  */
 
 public class ServicesHolder {
 
-	public static final int APP_ADD = 1;
-	public static final int GETAPP_INFO = 2;
+	public static final int LOGIN = 1;
+	public static final int REGISTER = 2 ;
+	
 	public static final int PUSH_ANDROID_ADD = 3;
-
+	
 	public static int DEBUGE = 0;
 	public static int RELEASE = 1;
 	public static int TEST = 2;
@@ -40,16 +32,16 @@ public class ServicesHolder {
 		env = new SparseArray<String>();
 
 		//env.put(DEVELOPMENT, "http://cloud.appmars.com");
-		env.put(DEBUGE, "http://cloud.appmars.com");
-		env.put(RELEASE, "http://115.28.36.217") ;
+	//	env.put(DEBUGE, "http://cloud.appmars.com");
+		env.put(RELEASE, "http://market.xayoudao.com") ;
 		// env.put(TEST, "http://test.ent.appmars.com");
 
 		mapmodule = new SparseArray<String>();
 
-		mapmodule.put(APP_ADD, "/cloud/1/app_add");
-		mapmodule.put(GETAPP_INFO, "/cloud/1/app_info_get");
+		mapmodule.put(LOGIN, "/apiproxy.php?action=userLoginToken");
+		mapmodule.put(REGISTER, "/apiproxy.php?action=register");
+	
 		mapmodule.put(PUSH_ANDROID_ADD, "/cloud/1/push_android_add");
-
 	}
 
 	/*
@@ -57,14 +49,14 @@ public class ServicesHolder {
 	 */
 	public static String api(int module) {
 		String path;
-		Log.d("BuildConfig.DEBUG", BuildConfig.DEBUG+"");
-		if(BuildConfig.DEBUG){
-			path = env.get(DEBUGE) + mapmodule.get(module);	
-			Log.d("DEBUGE path", path);
-		}else{
+//		Log.d("BuildConfig.DEBUG", BuildConfig.DEBUG+"");
+//		if(BuildConfig.DEBUG){
+//			path = env.get(DEBUGE) + mapmodule.get(module);	
+//			Log.d("DEBUGE path", path);
+//		}else{
 			path = env.get(RELEASE) + mapmodule.get(module);
 			Log.d(" RELEASE path", path);
-		}
+//		}
 		//Toast.makeText(context, "ddd:"+path, 0).show() ;
 		Log.d("path", path);
 		return path;

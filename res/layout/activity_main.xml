@@ -2,17 +2,22 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    >
 
     <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-
+ <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent" 
+            android:layout_above="@+id/main_radio" 
+            android:layout_marginBottom="-10dip">
         </FrameLayout>
 
         <RadioGroup
@@ -20,6 +25,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
             android:background="@drawable/toolbar_bg"
             android:orientation="horizontal" >
 
@@ -129,7 +135,7 @@
             </FrameLayout>
         </RadioGroup>
         <!-- 把默认的选项卡隐藏掉，自己用RadioButton定义选项卡 -->
-
+ </RelativeLayout>
         <TabWidget
             android:id="@android:id/tabs"
             android:layout_width="match_parent"

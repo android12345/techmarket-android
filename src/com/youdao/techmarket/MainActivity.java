@@ -1,13 +1,22 @@
 package com.youdao.techmarket;
 
 
+import org.apache.cordova.CordovaWebView;
+
+import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.KeyEvent;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.TabHost;
+
+import com.youdao.techmarket.utils.AppManager;
+import com.youdao.techmarket.utils.CommUtils;
 
 /**
  * 程序的主入口
@@ -24,7 +33,11 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	private RadioButton friend = null ;
 	private RadioButton more = null ;
 	private RadioButton prokeyinoo = null ;
+	private boolean isExit; 
 	
+
+	
+	private YouDaoApplication application ;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +45,9 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		setContentView(R.layout.activity_main);
 //		tabHost = (TabHost) findViewById(R.id.tabhost) ;
 //		tabHost.setup() ;
+		application = (YouDaoApplication) this.getApplication() ;
+		
+
 		tabHost = this.getTabHost() ;
 		buildTabSpec();  
 		initRadios() ;
@@ -45,6 +61,8 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		Intent mine_intent = new Intent(this, MineActivity.class);
 		Intent more_intent = new Intent(this, MoreActivity.class);
 		Intent innovation_intent = new Intent(this, PocketInnovationActivity.class);
+		Intent login_intent = new Intent(this,LoginActivity.class) ;
+		
 
 		tabHost.addTab(tabHost.newTabSpec("home").setIndicator("首页")
 				.setContent(home_intent));
@@ -103,11 +121,34 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 
 				break;
 			case R.id.radio_button_friend: // 我的
-				this.tabHost.setCurrentTabByTag("mine");
-				message.setChecked(false);
-				home.setChecked(false);
-				more.setChecked(false);
-				prokeyinoo.setChecked(false);
+				if(application.getUser()!=null){  //如果登录了，就显示内容
+					this.tabHost.setCurrentTabByTag("mine");
+					message.setChecked(false);
+					home.setChecked(false);
+					more.setChecked(false);
+					prokeyinoo.setChecked(false);
+				}else{//如果没有登录，就让去登录
+	
+					Intent intent = new Intent(MainActivity.this,LoginActivity.class) ;
+					startActivity(intent) ;
+					
+					message.setChecked(false);
+					friend.setChecked(false);
+					more.setChecked(false);
+					prokeyinoo.setChecked(false);
+					new Handler().postDelayed(new Runnable() {
+						
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							tabHost.setCurrentTabByTag("home");
+							home.setChecked(true);
+							
+						}
+					}, 7000) ;
+					
+					
+				}
 				break;
 			case R.id.radio_button_more: // 更多
 				this.tabHost.setCurrentTabByTag("more");
@@ -119,7 +160,94 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			}
 		}
 	}
+	  /**
+	    * 在tab当前页调用CordovaWebView的返回，如果没有返回则退出整个系綂
+	    */
+	  public void webViewGoBack(){
 
+			if (tabHost.getCurrentTabTag().equals("home")) {
+				currentWebViewGoBack("home",R.id.hometutorialView);
+			} else if (tabHost.getCurrentTabTag().equals("market")) {
+				currentWebViewGoBack("market",R.id.marketcordovaWebView);
+			} else if (tabHost.getCurrentTabTag().equals("innovation")) {
+				currentWebViewGoBack("innovation",R.id.inoocordovaWebView);
+			} else if (tabHost.getCurrentTabTag().equals("mine")) {
+				currentWebViewGoBack("mine",R.id.minecordovaWebView);
+			}else if(tabHost.getCurrentTabTag().equals("more")){
+				currentWebViewGoBack("more",R.id.morecordovaWebView);
+			}
+			else{//如果当前页是更多
+				exit() ;
+			}
+
+		}
+	/**
+	 * 取得当前的Tab中所对应的CordovaWebView并设置返回
+	 * @param str tabid
+	 * @param id   CordovaWebView的资源ID
+	 */
+	private void currentWebViewGoBack(String str,int id) {
+		Activity activity=getLocalActivityManager().getActivity(str);
+		CordovaWebView currentCordovaWebView = (CordovaWebView) activity.findViewById(id) ;
+		goBack(currentCordovaWebView);
+	}
+	  
+	//返回功能
+		public void goBack(CordovaWebView webView) {
+			if (webView.canGoBack()) {
+				webView.goBack();
+			} else {
+				 exit(); 
+			}
+		}
+	private void exit() {
+			 if (!isExit) {  
+		            isExit = true;  
+		            CommUtils.showMessage("再按一次返回键返回到桌面", getApplicationContext()) ;
+		            mHandler.sendEmptyMessageDelayed(0, 2000);  
+		        } else {  
+//		            Intent intent = new Intent(Intent.ACTION_MAIN);  
+//		            intent.addCategory(Intent.CATEGORY_HOME);  
+//		            startActivity(intent);  
+		            AppManager.getAppManager().AppExit(MainActivity.this);  
+		        }  
+			
+		}
+	  private Handler mHandler = new Handler() {  
+	       
+	       @Override  
+	       public void handleMessage(Message msg) {  
+	           
+	           super.handleMessage(msg);  
+	           isExit = false;  
+	       }  
+	 
+	   };  
+	
+
+	/**
+	 * 在tabactivity中重写onKeyDown方法，取得反回键不起作用，重写dispatchKeyEvent就可以了
+	 */
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		
+	/**
+	  注意在if判断中要加一个event.getAction()
+       KeyEvent.ACTION_DOWN判断，因为按键有两个事件ACTION_DOWN和ACTION_UP，
+       也就是按下和松开，如果不加这个判断，代码会执行两遍，而在下面的代码中就是弹两次AlertDialog
+	*/
+		if (event.getAction() == KeyEvent.ACTION_DOWN
+				&& event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+			
+				webViewGoBack() ;
+	            return false; 
+			}
+		
+		return super.dispatchKeyEvent(event);
+	}
+	
+	
+	
 //		private boolean isExit; 
 //	    @Override  
 //	    public boolean onKeyDown(int keyCode, KeyEvent event) {  

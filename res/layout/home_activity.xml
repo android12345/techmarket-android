@@ -6,8 +6,9 @@
     android:background="#eeffcc">
     
     <org.apache.cordova.CordovaWebView
-    android:id="@+id/tutorialView"
+    android:id="@+id/hometutorialView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent" 
+    android:layerType="software"/>
    
 </LinearLayout>
