@@ -3,6 +3,10 @@ package com.youdao.techmarket;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushManager;
+import com.youdao.techmarket.utils.CommUtils;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -48,6 +52,9 @@ public class SplashActivity extends BaseActivity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_splash) ;
+		
+		PushManager.startWork(getApplicationContext(),
+				PushConstants.LOGIN_TYPE_API_KEY, CommUtils.getMetaValue(SplashActivity.this, "api_key"));
 
 		preferences = getSharedPreferences("currentVersion", MODE_PRIVATE);
 

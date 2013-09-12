@@ -1,11 +1,15 @@
 package com.youdao.techmarket;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.baidu.android.pushservice.PushConstants;
 
@@ -17,6 +21,8 @@ public class PushMessageReceiver extends BroadcastReceiver {
 	public static final String TAG = PushMessageReceiver.class.getSimpleName();
 
 	AlertDialog.Builder builder;
+	
+	private SharedPreferences preferences ;
 
 	/**
 	 * 
@@ -29,6 +35,8 @@ public class PushMessageReceiver extends BroadcastReceiver {
 	public void onReceive(final Context context, Intent intent) {
 
 		Log.d(TAG, ">>> Receive intent: \r\n" + intent);
+		
+		preferences = context.getSharedPreferences("push_user", context.MODE_PRIVATE) ;
 
 		if (intent.getAction().equals(PushConstants.ACTION_MESSAGE)) { //这里是获取消息
 			//获取消息内容
@@ -49,18 +57,11 @@ public class PushMessageReceiver extends BroadcastReceiver {
 		} else if (intent.getAction().equals(PushConstants.ACTION_RECEIVE)) {
 			//处理绑定等方法的返回数据
 			//PushManager.startWork()的返回值通过PushConstants.METHOD_BIND得到
-			
-			
-			
+
 			String method1 = intent.getStringExtra("method") ;
 			if (PushConstants.METHOD_BIND.equals(method1)) {
 				Log.d("########################################","123456789456465") ;
 			}
-			
-			
-			
-			
-			
 			
 			//获取方法
 			final String method = intent
@@ -77,18 +78,32 @@ public class PushMessageReceiver extends BroadcastReceiver {
 			final String content = new String(
 					intent.getByteArrayExtra(PushConstants.EXTRA_CONTENT));
 			
+			JSONObject jsonObject = null ;
+			try {
+				 jsonObject = new JSONObject(content) ;
+				 JSONObject json = jsonObject.optJSONObject("response_params") ;
+				 String userid = json.optString("user_id") ;
+					Log.d("77777777777777777777777777777777777777", userid) ;
+				 Editor editor = preferences.edit() ;
+				 editor.putString("user_id", userid) ;
+				 editor.commit() ;
+				
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			Log.d("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", content) ;
+			
+			
+			
 			
 			//用户在此自定义处理消息,以下代码为demo界面展示用	
 			Log.d(TAG, "onMessage: method : " + method);
 			Log.d(TAG, "onMessage: result : " + errorCode);
 			Log.d(TAG, "onMessage: content : " + content);
-			Toast.makeText(
-					context,
-					"method : " + method + "\n result: " + errorCode
-							+ "\n content = " + content, Toast.LENGTH_LONG)
-					.show();
+		Log.d("----------------------------", "method : " + method + "\n result: " + errorCode
+				+ "\n content = " + content) ;
 
 			Intent responseIntent = null;
 //			responseIntent = new Intent(Utils.ACTION_RESPONSE);
@@ -107,6 +122,20 @@ public class PushMessageReceiver extends BroadcastReceiver {
 			
 			Intent aIntent = new Intent();
 			aIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			
+			String str = intent.getStringExtra(PushConstants.EXTRA_EXTRA) ;
+			
+			/**
+			 * str里面的数据   服务器返回的 
+			
+			 */
+			//保存服务端推送下来的附加字段。这是个 JSON 字符串。
+			//String extra = intent.getStringExtra(PushConstants.EXTRA_EXTRA) ;
+			
+			
+			Log.d("********************", str.toString()) ;
+			
+			
 //			aIntent.setClass(context, CustomActivity.class);
 //			String title = intent 
 //					.getStringExtra(PushConstants.EXTRA_NOTIFICATION_TITLE);

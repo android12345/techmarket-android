@@ -9,35 +9,88 @@ import com.youdao.techmarket.YouDaoApplication;
 import com.youdao.techmarket.domain.User;
 
 /**
- * 取得用户登录成功信息的插件  比如 token等 
+ * 取得用户登录成功信息的插件 比如 token等
+ * 
  * @author fengxue
- *
+ * 
  */
 public class GetUserInfoPlugin extends CordovaPlugin {
 
-	public static final String GETUSERINFO = "getuserinfo" ;
-	private YouDaoApplication application = null ;
+	public static final String GETUSERINFO = "getuserinfo";
+	public static final String GETUSERPARARM = "getuserinfoWithParam";
+	public static final String LOGOUT = "deleteUserInfo";
+	private YouDaoApplication application = null;
+
 	@Override
 	public boolean execute(String action, JSONArray args,
 			CallbackContext callbackContext) throws JSONException {
-		
-		if(action.equals(GETUSERINFO)){
-			
-			getUserInfo(callbackContext) ;
-			
-			return true ;
+
+		application = (YouDaoApplication) this.cordova.getActivity()
+				.getApplication();
+		User user = application.getUser();
+
+		if (action.equals(GETUSERINFO)) {
+
+			getUserInfo(user, callbackContext);
+
+			return true;
 		}
-		
-		
-		return false ;
+		if (action.equals(GETUSERPARARM)) {
+
+			getUserParams(args, callbackContext, user);
+
+			return true;
+		}
+		if (action.equals(LOGOUT)) {
+			clearUser(user, callbackContext);
+		}
+
+		return false;
 	}
-	private void getUserInfo(CallbackContext callbackContext) {
-		
-		application = (YouDaoApplication) this.cordova.getActivity().getApplication() ;
-		User user = application.getUser() ;
-		if(user!=null){
-			callbackContext.success(user.getToken()) ;
+
+	private void clearUser(User user, CallbackContext callbackContext) {
+		if (user != null) {
+			application.clearUser();
+			callbackContext.success("退出登录成功!");
 		}
-		
+
+	}
+
+	/**
+	 * 根据参数取得相应的值
+	 * 
+	 * @param args
+	 * @param callbackContext
+	 * @param user
+	 * @throws JSONException
+	 */
+	private void getUserParams(JSONArray args, CallbackContext callbackContext,
+			User user) throws JSONException {
+		final String arg = args.getString(0);
+
+		if (user != null) {
+			if ("token".equals(arg)) {
+				callbackContext.success(user.getToken());
+			}
+			if ("userType".equals(arg)) {
+				callbackContext.success(user.getUserType());
+			}
+		}
+	}
+	/**
+	 * 以jsonarray的形式　返回所有用户信息
+	 * @param user
+	 * @param callbackContext
+	 */
+	private void getUserInfo(User user, CallbackContext callbackContext) {
+
+		if (user != null) {
+
+			JSONArray array = new JSONArray();
+			array.put(user.getToken());
+			array.put(user.getUserType());
+			callbackContext.success(array);
+		}
+
 	}
 }

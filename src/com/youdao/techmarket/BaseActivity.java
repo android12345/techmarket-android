@@ -10,11 +10,14 @@ import org.apache.cordova.IceCreamCordovaWebViewClient;
 import org.apache.cordova.api.CordovaInterface;
 import org.apache.cordova.api.CordovaPlugin;
 
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebView;
 
@@ -28,6 +31,7 @@ import com.youdao.techmarket.widgets.DefineCustomProgressDialog;
  * @author fengxue
  *
  */
+@SuppressLint("NewApi")
 public class BaseActivity extends Activity implements CordovaInterface{
 	
 	private final ExecutorService threadPool =Executors.newCachedThreadPool();
@@ -36,12 +40,13 @@ public class BaseActivity extends Activity implements CordovaInterface{
 	
 	private CordovaWebViewClient cordovaWebViewClient ;
 
+	@TargetApi(Build.VERSION_CODES.FROYO)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		Config.init(this);
-		
+
 		//添加Activity到堆栈
 		AppManager.getAppManager().addActivity(this);
 	}

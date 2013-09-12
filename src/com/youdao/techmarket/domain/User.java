@@ -27,6 +27,11 @@ public class User implements Serializable {
 		this.userType = userType;
 	}
 
+	@Override
+	public String toString() {
+		return "User [token=" + token + ", userType=" + userType + "]";
+	}
+
 	public String getToken() {
 		return token;
 	}

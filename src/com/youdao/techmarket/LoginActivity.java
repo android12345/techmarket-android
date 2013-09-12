@@ -3,6 +3,7 @@ package com.youdao.techmarket;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -13,9 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.baidu.android.pushservice.PushConstants;
-import com.baidu.android.pushservice.PushManager;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.youdao.techmarket.api.UserManager;
 import com.youdao.techmarket.domain.MessageResult;
@@ -25,12 +25,12 @@ import com.youdao.techmarket.utils.DeviceUtils;
 import com.youdao.techmarket.widgets.InputMethodRelativeLayout;
 import com.youdao.techmarket.widgets.InputMethodRelativeLayout.OnSizeChangedListenner;
 
-
 /**
  * 登录界面
  * @author fengxue
  *
  */
+@SuppressWarnings("unused")
 public class LoginActivity extends BaseActivity implements OnSizeChangedListenner{
 	
 	private LinearLayout showPass = null ;
@@ -52,19 +52,18 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 	private LinearLayout llLogo ;
 	
 	private YouDaoApplication application ;
+	
+	private SharedPreferences preferences = null ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_login) ;
-		
+		preferences = this.getSharedPreferences("push_user", MODE_PRIVATE) ;
 		initView() ;
 		setOnclickListener() ;
 	}
 	
 	private void initView(){
-		
-		PushManager.startWork(getApplicationContext(),
-				PushConstants.LOGIN_TYPE_API_KEY, CommUtils.getMetaValue(LoginActivity.this, "api_key"));
 		
 		application = (YouDaoApplication) this.getApplication() ;
 		
@@ -101,6 +100,7 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 		}
 	};
 	//找回密码监听事件
+	
 	private View.OnClickListener findpassOnClickListener = new View.OnClickListener() {
 		
 		@Override
@@ -137,7 +137,11 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 				return ;
 			}
 			
-			UserManager.getInstance().login(LoginActivity.this, username_content,userpass_content,DeviceUtils.getUUID(LoginActivity.this), new JsonHttpResponseHandler(){
+			String userid = preferences.getString("user_id", null) ;
+			
+			Toast.makeText(LoginActivity.this, userid, 0).show() ;
+			
+			UserManager.getInstance().login(LoginActivity.this, username_content,userpass_content,userid, new JsonHttpResponseHandler(){
 				
 				@Override
 				public void onStart() {

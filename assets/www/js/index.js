@@ -210,6 +210,37 @@ function getuserinfo() {
 
 }
 
+
+function getuserpararm() {
+    cordova.exec(function(winParam) {
+        
+        //var i = winParam ;
+        alert(winParam) ;
+    }, function(error) {
+        alert(error);
+    }, "GetUserInfoPlugin", "getuserinfoWithParam", ["userType"]);
+						
+
+}
+
+
+function logout() {
+    cordova.exec(function(winParam) {
+        
+        //var i = winParam ;
+        alert(winParam) ;
+    }, function(error) {
+        alert(error);
+    }, "GetUserInfoPlugin", "deleteUserInfo", [""]);
+						
+
+}
+
+
+
+
+
+
 function login() {
     cordova.exec(function(winParam) {
         

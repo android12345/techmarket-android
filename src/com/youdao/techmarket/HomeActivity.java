@@ -13,8 +13,6 @@ public class HomeActivity extends BaseActivity  {
 	
 	private CordovaWebView cordovaWebView = null ;
 	
-
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,7 +26,7 @@ public class HomeActivity extends BaseActivity  {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
+		 
 	}
 
 	@Override
