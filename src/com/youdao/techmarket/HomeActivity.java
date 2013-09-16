@@ -3,6 +3,7 @@ package com.youdao.techmarket;
 import org.apache.cordova.CordovaWebView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 /**
  * 首页
@@ -20,7 +21,17 @@ public class HomeActivity extends BaseActivity  {
 //		mMainFrameTask  = new MainFrameTask(this);
 //		mMainFrameTask.execute();
 		cordovaWebView = (CordovaWebView) findViewById(R.id.hometutorialView);
-		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");
+		String loadInfo = getIntent().getStringExtra("loadinfo") ;
+		if(loadInfo!=null || !"".equals(loadInfo)){
+			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html?"+loadInfo);
+			
+			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", "file:///android_asset/home/index.html?"+loadInfo) ;
+			
+		}else{
+			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");
+		}
+		
+		
 	}
 
 	@Override

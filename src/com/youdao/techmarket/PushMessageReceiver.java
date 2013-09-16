@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.baidu.android.pushservice.PushConstants;
 
@@ -78,6 +79,7 @@ public class PushMessageReceiver extends BroadcastReceiver {
 			final String content = new String(
 					intent.getByteArrayExtra(PushConstants.EXTRA_CONTENT));
 			
+			//把返回的json信息解析出来。
 			JSONObject jsonObject = null ;
 			try {
 				 jsonObject = new JSONObject(content) ;
@@ -134,6 +136,34 @@ public class PushMessageReceiver extends BroadcastReceiver {
 			
 			
 			Log.d("********************", str.toString()) ;
+			/**
+			 * 09-16 13:54:22.830: D/********************(10517): {"readUri":"xayoudao:market:loadPushInfo\/123456"}
+
+			 */
+			JSONObject jsonObject ;
+			String resultArray []  ;
+			String jumpwhere ;
+			String loadPushInfo  ;
+			try {
+				jsonObject = new JSONObject(str) ;
+				String resultJson = jsonObject.optString("readUri") ;
+				if(resultJson != null){
+					resultArray = resultJson.split(":") ;
+					if(resultArray[0].equals("xayoudao")){
+						jumpwhere = resultArray[1] ;
+						loadPushInfo = resultArray[2] ;
+						
+						aIntent.setClass(context, MainActivity.class);
+						aIntent.putExtra("whitchtab", jumpwhere) ;
+						aIntent.putExtra("loadinfo", loadPushInfo) ;
+						context.startActivity(aIntent);
+					}
+				}
+				
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			
 //			aIntent.setClass(context, CustomActivity.class);

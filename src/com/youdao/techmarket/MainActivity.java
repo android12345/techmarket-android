@@ -5,7 +5,12 @@ import org.apache.cordova.CordovaWebView;
 
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,8 +20,10 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.TabHost;
 
+import com.umeng.analytics.MobclickAgent;
 import com.youdao.techmarket.utils.AppManager;
 import com.youdao.techmarket.utils.CommUtils;
+import com.youdao.techmarket.utils.NetWorkUtils;
 
 /**
  * 程序的主入口
@@ -35,7 +42,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	private RadioButton prokeyinoo = null ;
 	private boolean isExit; 
 	
-
+	private BroadcastReceiver connectionReceiver;
 	
 	private YouDaoApplication application ;
 
@@ -47,6 +54,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 //		tabHost.setup() ;
 		application = (YouDaoApplication) this.getApplication() ;
 		
+		addNetWorkReceiver() ;
 
 		tabHost = this.getTabHost() ;
 		buildTabSpec();  
@@ -55,13 +63,21 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 
 	// 设置选项卡标签和要跳转的Activity
 	private void buildTabSpec() {
-
+		
+		Intent intent = getIntent() ;
+		
+		String whichtab = intent.getStringExtra("whitchtab") ;
+	
 		Intent home_intent = new Intent(this, HomeActivity.class);
+		if("home".equals(whichtab)){ //处理推送过跳转过来接收信息
+			String loadinfo = intent.getStringExtra("loadinfo") ;
+			home_intent.putExtra("loadinfo",loadinfo) ;
+		}
+
 		Intent market_intent = new Intent(this, MarketActivity.class);
 		Intent mine_intent = new Intent(this, MineActivity.class);
 		Intent more_intent = new Intent(this, MoreActivity.class);
 		Intent innovation_intent = new Intent(this, PocketInnovationActivity.class);
-		Intent login_intent = new Intent(this,LoginActivity.class) ;
 		
 
 		tabHost.addTab(tabHost.newTabSpec("home").setIndicator("首页")
@@ -246,7 +262,63 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		return super.dispatchKeyEvent(event);
 	}
 	
+	/**
+	 * 取得网络类型并注册广播
+	 */
+	private void addNetWorkReceiver() {
+		// 注册一个广播监听器
+		connectionReceiver = new BroadcastReceiver() {
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				ConnectivityManager connectMgr = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+				NetworkInfo mobNetInfo = connectMgr
+						.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+				NetworkInfo wifiNetInfo = connectMgr
+						.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+				if (!mobNetInfo.isConnected() && !wifiNetInfo.isConnected()) {
+					//如果没有 网络 弹出设置网络对话框
+					NetWorkUtils.setNetWorkDialog(MainActivity.this);
+				}
+
+				
+			}
+
+		};
+		//注册广播
+		setRegisterReceiver(connectionReceiver);
+	}
 	
+	/**
+	 * 注册网络检测广播
+	 * 
+	 * @param receiver
+	 */
+	private void setRegisterReceiver(BroadcastReceiver receiver) {
+		this.connectionReceiver = receiver;
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+		registerReceiver(connectionReceiver, intentFilter);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		unregisterReceiver(connectionReceiver);
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		MobclickAgent.onResume(this);
+	}
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		MobclickAgent.onPause(this);
+	}
 	
 //		private boolean isExit; 
 //	    @Override  

@@ -3,24 +3,29 @@ package com.youdao.techmarket;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.baidu.android.pushservice.PushConstants;
-import com.baidu.android.pushservice.PushManager;
-import com.youdao.techmarket.utils.CommUtils;
-
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+
+import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushManager;
+import com.youdao.techmarket.utils.CommUtils;
+import com.youdao.techmarket.utils.NetWorkUtils;
 
 /**
  * splash界面
@@ -33,6 +38,8 @@ public class SplashActivity extends BaseActivity implements OnClickListener{
 	protected Dialog guideDialog;
 	//定义preferences
 	private static SharedPreferences preferences;
+	
+
 	
 	private static Handler handler = new Handler() { // 主线程
 		public void handleMessage(android.os.Message msg) {
@@ -58,6 +65,8 @@ public class SplashActivity extends BaseActivity implements OnClickListener{
 
 		preferences = getSharedPreferences("currentVersion", MODE_PRIVATE);
 
+		
+		
 		new Handler().postDelayed(new Runnable() {
 			
 			@Override
@@ -159,4 +168,22 @@ public class SplashActivity extends BaseActivity implements OnClickListener{
 		startActivity(intent);
 		finish();
 	}
+	
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		
+	}
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+	
 }

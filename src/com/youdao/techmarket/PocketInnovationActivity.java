@@ -4,7 +4,6 @@ import org.apache.cordova.CordovaWebView;
 
 import android.os.Bundle;
 
-
 /**
  * 掌上创新界面
  * @author fengxue
@@ -21,7 +20,7 @@ public class PocketInnovationActivity extends BaseActivity {
 		
 		cordovaWebView = (CordovaWebView) findViewById(R.id.inoocordovaWebView);
 	
-		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/www/index.html") ;
+		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/innovation/index.html") ;
 	}
 	
 	@Override
@@ -40,7 +39,5 @@ public class PocketInnovationActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onDestroy();
 	}
-
-	
 
 }

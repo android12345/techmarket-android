@@ -1,1 +1,1 @@
-{"id":"23c60e6e-3bf8-4c19-a4f8-5362cd3d51e0","js":[{"path":"cordova-android.js","type":"js"},{"bundle":true,"path":"app.js","update":"delta","type":"js"}],"css":[{"path":"resources/css/app.css","update":"delta","type":"css"}]}
+{"id":"23c60e6e-3bf8-4c19-a4f8-5362cd3d51e0","js":[{"path":"app.js","bundle":true,"update":"delta","type":"js"}],"css":[{"path":"resources/css/app.css","update":"delta","type":"css"}]}
