@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.baidu.android.pushservice.PushConstants;
 
@@ -142,7 +141,7 @@ public class PushMessageReceiver extends BroadcastReceiver {
 			 */
 			JSONObject jsonObject ;
 			String resultArray []  ;
-			String jumpwhere ;
+			String jumpwhere ; //跳转到哪里
 			String loadPushInfo  ;
 			try {
 				jsonObject = new JSONObject(str) ;
@@ -154,8 +153,11 @@ public class PushMessageReceiver extends BroadcastReceiver {
 						loadPushInfo = resultArray[2] ;
 						
 						aIntent.setClass(context, MainActivity.class);
-						aIntent.putExtra("whitchtab", jumpwhere) ;
-						aIntent.putExtra("loadinfo", loadPushInfo) ;
+						aIntent.putExtra("currenttab", jumpwhere) ;
+						aIntent.putExtra("appendurl", loadPushInfo) ;
+						context.startActivity(aIntent);
+					}else if(resultArray[0].equals("xayoudaonew")){
+						aIntent.setClass(context, SplashActivity.class);
 						context.startActivity(aIntent);
 					}
 				}

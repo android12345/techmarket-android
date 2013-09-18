@@ -96,6 +96,27 @@ public class BaseActivity extends Activity implements CordovaInterface{
 	public  void initAndLoadUrl(final CordovaWebView cordovaWebView,String url){
 	    if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) { //3.0以前
 	    	   cordovaWebViewClient = new CordovaWebViewClient(this, cordovaWebView) {  
+	    		   //监听url的变化
+	    		   @Override
+	    		   public boolean shouldOverrideUrlLoading(WebView webView,String url) {
+	    			   
+	    			 //  onLoadUrlListener.onloadUrl(url) ;
+	   
+	    			//xayoudao://infomars:loadpageinfo/123456
+					String infos[] = url.split(":");
+					if ("xayoudao".equals(infos[0])) {
+						String jumptab = infos[1];
+						String info = infos[2];
+						Intent intent = new Intent(BaseActivity.this,MainActivity.class);
+						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						intent.putExtra("currenttab", jumptab);
+						intent.putExtra("appendurl", info);
+						startActivity(intent);
+					}
+
+	    			 
+	    			   return true;
+	    		   }
 		           @Override  
 		           public void onPageStarted(WebView view, String url, Bitmap favicon) {  
 		              super.onPageStarted(view, url, favicon);  
@@ -128,6 +149,25 @@ public class BaseActivity extends Activity implements CordovaInterface{
 		       }; 
 			} else {
 				cordovaWebViewClient = new IceCreamCordovaWebViewClient(this, cordovaWebView) {
+					//监听url的变化
+					@Override
+					public boolean shouldOverrideUrlLoading(WebView webView,String url) {
+		    			   
+						 //  onLoadUrlListener.onloadUrl(url) ;
+					String infos[] = url.split(":");
+					if ("xayoudao".equals(infos[0])) {
+						String jumptab = infos[1];
+						String info = infos[2];
+						Intent intent = new Intent(BaseActivity.this,MainActivity.class);
+						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						intent.putExtra("currenttab", jumptab);
+						intent.putExtra("appendurl", info);
+						startActivity(intent);
+					}
+		    			   
+		    			return true ;
+		    		}
+					
 					@Override
 					public void onPageStarted(WebView view, String url,Bitmap favicon) {
 						super.onPageStarted(view, url, favicon);
@@ -150,8 +190,8 @@ public class BaseActivity extends Activity implements CordovaInterface{
 					}
 				};
 			}
-	    
-	       
+//	    cordovaWebView.getSettings().setJavaScriptEnabled(true); 
+//	    cordovaWebView.getSettings().setLoadWithOverviewMode(true);
 	    cordovaWebView.setWebViewClient(cordovaWebViewClient);  
 	    
 	    //没有网时调用 错误页面
@@ -208,5 +248,21 @@ public class BaseActivity extends Activity implements CordovaInterface{
 		super.onPause();
 		 MobclickAgent.onPause(this);
 	}
-
+	
+//	/**
+//	 * 监听url变化接口
+//	 * @author fengxue
+//	 *
+//	 */
+//	public interface OnLoadUrlListener{
+//		public void onloadUrl(String url) ;
+//	}
+//
+//	private OnLoadUrlListener onLoadUrlListener ;
+//	
+//	public void setOnLoadUrlListener(OnLoadUrlListener onLoadUrlListener){
+//		this.onLoadUrlListener = onLoadUrlListener ;
+//	}
+	
+	
 }

@@ -34,7 +34,7 @@ import com.youdao.techmarket.utils.NetWorkUtils;
 @SuppressWarnings("deprecation")
 public class MainActivity extends TabActivity implements OnCheckedChangeListener{
 
-	private TabHost tabHost = null ;
+	public TabHost tabHost = null ;
 	private RadioButton home = null ;
 	private RadioButton message = null ;
 	private RadioButton friend = null ;
@@ -45,6 +45,10 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	private BroadcastReceiver connectionReceiver;
 	
 	private YouDaoApplication application ;
+
+	public MainActivity() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,35 +61,87 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		addNetWorkReceiver() ;
 
 		tabHost = this.getTabHost() ;
-		buildTabSpec();  
 		initRadios() ;
+		buildTabSpec();  
+	
 	}
 
 	// 设置选项卡标签和要跳转的Activity
 	private void buildTabSpec() {
 		
 		Intent intent = getIntent() ;
+//		//接收推送过来要跳转到的tab
+//		String whichtab = intent.getStringExtra("whitchtab") ;
 		
-		String whichtab = intent.getStringExtra("whitchtab") ;
+		
+		//接收应用内部点击按钮要跳罢的tab和地址  包括接收推送过来要跳转到的tab和要加载的页面地址
+		String currenttab = intent.getStringExtra("currenttab") ;
+		String appendUrl = intent.getStringExtra("appendurl") ;
+		
+		
 	
 		Intent home_intent = new Intent(this, HomeActivity.class);
-		if("home".equals(whichtab)){ //处理推送过跳转过来接收信息
-			String loadinfo = intent.getStringExtra("loadinfo") ;
-			home_intent.putExtra("loadinfo",loadinfo) ;
-		}
+//		if("home".equals(whichtab)){ //处理推送过跳转过来接收信息
+//			String loadinfo = intent.getStringExtra("loadinfo") ;
+//			home_intent.putExtra("loadinfo",loadinfo) ;
+//		}
 
 		Intent market_intent = new Intent(this, MarketActivity.class);
+		
 		Intent mine_intent = new Intent(this, MineActivity.class);
 		Intent more_intent = new Intent(this, MoreActivity.class);
 		Intent innovation_intent = new Intent(this, PocketInnovationActivity.class);
 		
-
+		
+		
+		
+		if("home".equals(currenttab)){
+			tabHost.addTab(tabHost.newTabSpec("home").setIndicator("首页")
+					.setContent(home_intent));
+			this.tabHost.setCurrentTabByTag("home");
+			home.setChecked(true);
+			home_intent.putExtra("appendurl",appendUrl) ;
+			
+//			Toast.makeText(MainActivity.this, "haha", 0).show();
+		}
+		
 		tabHost.addTab(tabHost.newTabSpec("home").setIndicator("首页")
 				.setContent(home_intent));
+		
+		
+		if("market".equals(currenttab)){
+			tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
+					.setContent(home_intent));
+			this.tabHost.setCurrentTabByTag("market");
+			message.setChecked(true);
+			market_intent.putExtra("appendurl",appendUrl) ;
+//			Toast.makeText(MainActivity.this, "haha", 0).show();
+		}
+		
 		tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
 				.setContent(market_intent));
+		if("innovation".equals(currenttab)){
+			tabHost.addTab(tabHost.newTabSpec("innovation").setIndicator("掌上创新")
+					.setContent(innovation_intent));
+			this.tabHost.setCurrentTabByTag("innovation");
+			prokeyinoo.setChecked(true);
+			innovation_intent.putExtra("appendurl",appendUrl) ;
+//			Toast.makeText(MainActivity.this, "haha", 0).show();
+		}
 		tabHost.addTab(tabHost.newTabSpec("innovation").setIndicator("掌上创新")
 				.setContent(innovation_intent));
+		
+		
+		
+		if("mine".equals(currenttab)){
+			tabHost.addTab(tabHost.newTabSpec("mine").setIndicator("我的")
+					.setContent(innovation_intent));
+			this.tabHost.setCurrentTabByTag("mine");
+			friend.setChecked(true);
+			mine_intent.putExtra("appendurl",appendUrl) ;
+//			Toast.makeText(MainActivity.this, "haha", 0).show();
+		}
+		
 		tabHost.addTab(tabHost.newTabSpec("mine").setIndicator("我的")
 				.setContent(mine_intent));
 		tabHost.addTab(tabHost.newTabSpec("more").setIndicator("更多")
@@ -161,7 +217,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 							home.setChecked(true);
 							
 						}
-					}, 7000) ;
+					}, 500) ;
 					
 					
 				}
@@ -353,4 +409,5 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 //	        }  
 //	  
 //	    };  
+
 }
