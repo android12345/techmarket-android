@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    
     <string name="umeng_key">5237ebf056240b4d4a006f0b</string>
     <string name="weixin_key">wx5303b22c89afb38e</string>
     <!-- <string name="jpush_key">jpushkey</string> -->
-   <!--  <string name="app_id">appid</string> -->
+    <!-- <string name="app_id">appid</string> -->
     <integer name="versionCode">1</integer>
-    <string name="versionName">1.0</string>
-	 <string name="commom_app_url">domainurl</string> 
- 	
- 	 <!-- <string name="commom_app_url">http://cloud.appmars.com</string>  -->
 
-  <!--   <string name="umeng_key">51a305af56240bec12015bf1</string>
+    <string name="versionName">1.0</string>
+    <string name="commom_app_url">domainurl</string>
+
+    <!-- <string name="commom_app_url">http://cloud.appmars.com</string> -->
+
+
+    <!--
+    <string name="umeng_key">51a305af56240bec12015bf1</string>
     <string name="weixin_key">wxd930ea5d5a258f4f</string>
     <string name="jpush_key">a5824d3cca256df4e27aa533</string>
-    <string name="app_id">1</string> -->
+    <string name="app_id">1</string>
+    -->
 
 </resources>

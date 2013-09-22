@@ -29,19 +29,19 @@ public class GetUserInfoPlugin extends CordovaPlugin {
 				.getApplication();
 		User user = application.getUser();
 
-		if (action.equals(GETUSERINFO)) {
+		if (GETUSERINFO.equals(action)) {
 
 			getUserInfo(user, callbackContext);
 
 			return true;
 		}
-		if (action.equals(GETUSERPARARM)) {
+		if (GETUSERPARARM.equals(action)) {
 
 			getUserParams(args, callbackContext, user);
 
 			return true;
 		}
-		if (action.equals(LOGOUT)) {
+		if (LOGOUT.equals(action)) {
 			clearUser(user, callbackContext);
 		}
 
