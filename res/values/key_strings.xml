@@ -3,9 +3,9 @@
 
     
     <string name="umeng_key">5237ebf056240b4d4a006f0b</string>
-    <string name="weixin_key">wxkey</string>
-    <string name="jpush_key">jpushkey</string>
-    <string name="app_id">appid</string>
+    <string name="weixin_key">wx5303b22c89afb38e</string>
+    <!-- <string name="jpush_key">jpushkey</string> -->
+   <!--  <string name="app_id">appid</string> -->
     <integer name="versionCode">1</integer>
     <string name="versionName">1.0</string>
 	 <string name="commom_app_url">domainurl</string> 
