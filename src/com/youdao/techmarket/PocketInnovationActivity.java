@@ -50,10 +50,17 @@ public class PocketInnovationActivity extends BaseActivity {
 		cordovaWebView = (CordovaWebView) findViewById(R.id.inoocordovaWebView);
 		
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
-		if(loadInfo!=null || !"".equals(loadInfo)){
-			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/innovation/index.html?"+loadInfo);
+		
+		//Toast.makeText(PocketInnovationActivity.this, "made:"+loadInfo, 1).show() ;
+		
+
+		Toast.makeText(PocketInnovationActivity.this, "made2:"+(loadInfo!=null), 1).show() ;
+	
+		
+		if(loadInfo!=null && !"".equals(loadInfo)){
+			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/innovation/index.html#"+loadInfo);
 			
-			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%innovation", "file:///android_asset/innovation/index.html?"+loadInfo) ;
+			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%innovation", "file:///android_asset/innovation/index.html#"+loadInfo) ;
 			
 		}else{
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/innovation/index.html");

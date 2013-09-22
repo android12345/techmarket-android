@@ -254,5 +254,17 @@ function login() {
 }
 
 
+function clearcache() {
+    cordova.exec(function(winParam) {
+        
+        //var i = winParam ;
+        alert(winParam) ;
+    }, function(error) {
+       // alert(error);
+    }, "ClearAppCachePlugin", "clearcache", [""]);
+						
+
+}
+
 
 	

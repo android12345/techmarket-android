@@ -26,7 +26,7 @@ import com.youdao.techmarket.utils.AppManager;
 import com.youdao.techmarket.widgets.DefineCustomProgressDialog;
 
 /**
- * 应用程序activity的管理类，用于管理activity应用程序退出 webview的加载以及监听
+ * 应用程序activity的管理类，用于管理activity应用程序退出 webview的加载以及监听 url变化
  * @author fengxue
  *
  */
@@ -266,6 +266,7 @@ public class BaseActivity extends Activity implements CordovaInterface{
 //	public void setOnLoadUrlListener(OnLoadUrlListener onLoadUrlListener){
 //		this.onLoadUrlListener = onLoadUrlListener ;
 //	}
+	
 	
 	
 }

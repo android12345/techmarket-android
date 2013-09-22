@@ -53,10 +53,10 @@ public class HomeActivity extends BaseActivity  {
 		
 		
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
-		if(loadInfo!=null || !"".equals(loadInfo)){
-			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html?"+loadInfo);
+		if(loadInfo!=null && !"".equals(loadInfo)){
+			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html#"+loadInfo);
 			
-			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%home", "file:///android_asset/home/index.html?"+loadInfo) ;
+			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%home", "file:///android_asset/home/index.html#"+loadInfo) ;
 			
 		}else{
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");

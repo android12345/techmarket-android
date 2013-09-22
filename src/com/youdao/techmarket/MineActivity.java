@@ -45,10 +45,10 @@ public class MineActivity extends BaseActivity{
 		cordovaWebView = (CordovaWebView) findViewById(R.id.minecordovaWebView);
 		
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
-		if(loadInfo!=null || !"".equals(loadInfo)){
-			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/mine/index.html?"+loadInfo);
+		if(loadInfo!=null && !"".equals(loadInfo)){
+			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/mine/index.html#"+loadInfo);
 			
-			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%mine", "file:///android_asset/mine/index.html?"+loadInfo) ;
+			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%mine", "file:///android_asset/mine/index.html#"+loadInfo) ;
 			
 		}else{
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/mine/index.html");

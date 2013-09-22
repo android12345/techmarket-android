@@ -81,6 +81,9 @@
      
      <!-- 调用用户登录插件 -->
      <plugin name="LoginPlugin" value="com.youdao.techmarket.plugin.LoginPlugin"/>
+     
+     
+     <plugin name="ClearAppCachePlugin" value="com.youdao.techmarket.plugin.ClearAppCachePlugin"/>
 </plugins>
 </cordova>
 
