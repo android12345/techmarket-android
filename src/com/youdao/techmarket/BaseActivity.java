@@ -243,6 +243,9 @@ public class BaseActivity extends Activity implements CordovaInterface{
 		MobclickAgent.onResume(this);
 	}
 
+	/**
+	 * 添加统计
+	 */
 	@Override
 	protected void onPause() {
 		super.onPause();

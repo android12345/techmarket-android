@@ -2,10 +2,7 @@ package com.youdao.techmarket;
 
 import org.apache.cordova.CordovaWebView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
 
 /**
  * 更多界面
@@ -15,7 +12,6 @@ import android.widget.Toast;
 public class MoreActivity extends BaseActivity  {
 	
 	private CordovaWebView cordovaWebView = null ;
-	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
