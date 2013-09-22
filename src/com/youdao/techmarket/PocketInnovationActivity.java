@@ -52,9 +52,6 @@ public class PocketInnovationActivity extends BaseActivity {
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
 		
 		//Toast.makeText(PocketInnovationActivity.this, "made:"+loadInfo, 1).show() ;
-		
-
-		Toast.makeText(PocketInnovationActivity.this, "made2:"+(loadInfo!=null), 1).show() ;
 	
 		
 		if(loadInfo!=null && !"".equals(loadInfo)){
