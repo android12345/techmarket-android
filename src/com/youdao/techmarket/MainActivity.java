@@ -19,7 +19,6 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.TabHost;
-import android.widget.Toast;
 
 import com.umeng.analytics.MobclickAgent;
 import com.youdao.techmarket.LoginActivity.LoginSuccess;
@@ -69,7 +68,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		buildTabSpec();  
 	
 	}
-
+	private Intent market_intent ,mine_intent,more_intent,innovation_intent;
 	// 设置选项卡标签和要跳转的Activity
 	private void buildTabSpec() {
 		
@@ -90,11 +89,11 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 //			home_intent.putExtra("loadinfo",loadinfo) ;
 //		}
 
-		Intent market_intent = new Intent(this, MarketActivity.class);
+		market_intent = new Intent(this, MarketActivity.class);
 		
-		Intent mine_intent = new Intent(this, MineActivity.class);
-		Intent more_intent = new Intent(this, MoreActivity.class);
-		Intent innovation_intent = new Intent(this, PocketInnovationActivity.class);
+		 mine_intent = new Intent(this, MineActivity.class);
+		 more_intent = new Intent(this, MoreActivity.class);
+		 innovation_intent = new Intent(this, PocketInnovationActivity.class);
 		
 		
 		
@@ -102,7 +101,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		if("home".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("home").setIndicator("首页")
 					.setContent(home_intent));
-			this.tabHost.setCurrentTabByTag("home");
+			//this.tabHost.setCurrentTabByTag("home");
 			home.setChecked(true);
 			home_intent.putExtra("appendurl",appendUrl) ;
 			
@@ -116,10 +115,10 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		if("market".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
 					.setContent(market_intent));
-			this.tabHost.setCurrentTabByTag("market");
+			//this.tabHost.setCurrentTabByTag("market");
 			message.setChecked(true);
 			market_intent.putExtra("appendurl",appendUrl) ;
-//			Toast.makeText(MainActivity.this, "haha", 0).show();
+			
 		}
 		
 		tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
@@ -127,7 +126,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		if("innovation".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("innovation").setIndicator("掌上创新")
 					.setContent(innovation_intent));
-			this.tabHost.setCurrentTabByTag("innovation");
+			//this.tabHost.setCurrentTabByTag("innovation");
 			prokeyinoo.setChecked(true);
 			innovation_intent.putExtra("appendurl",appendUrl) ;
 //			Toast.makeText(MainActivity.this, "haha", 0).show();
@@ -140,7 +139,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		if("mine".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("mine").setIndicator("我的")
 					.setContent(mine_intent));
-			this.tabHost.setCurrentTabByTag("mine");
+			//this.tabHost.setCurrentTabByTag("mine");
 			friend.setChecked(true);
 			mine_intent.putExtra("appendurl",appendUrl) ;
 //			Toast.makeText(MainActivity.this, "haha", 0).show();
@@ -173,6 +172,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 		if (isChecked) {
+			
 			switch (buttonView.getId()) { // RadtioButton代替了原始的选项卡，那么原始的选项功能也就失去了，这里让RadionButton具有选项功能。
 			case R.id.radio_button_home: // 首页
 				this.tabHost.setCurrentTabByTag("home");
@@ -182,13 +182,16 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 				prokeyinoo.setChecked(false);
 				break;
 			case R.id.radio_button_message: // 大市场
+				market_intent.putExtra("appendurl","") ;
 				this.tabHost.setCurrentTabByTag("market");
+				
 				home.setChecked(false);
 				friend.setChecked(false);
 				more.setChecked(false);
 				prokeyinoo.setChecked(false);
 				break;
 			case R.id.radio_button_proketinoo:
+				innovation_intent.putExtra("appendurl","") ;
 				this.tabHost.setCurrentTabByTag("innovation");
 				message.setChecked(false);
 				friend.setChecked(false);
