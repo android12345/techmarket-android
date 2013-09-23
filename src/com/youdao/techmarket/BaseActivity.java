@@ -19,7 +19,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebView;
+
 
 import com.umeng.analytics.MobclickAgent;
 import com.youdao.techmarket.utils.AppManager;
@@ -103,10 +105,15 @@ public class BaseActivity extends Activity implements CordovaInterface{
 	    			 //  onLoadUrlListener.onloadUrl(url) ;
 	   
 	    			//xayoudao://infomars:loadpageinfo/123456
+	    			   //             xayoudao://market:showPolicy
+
+	    			
 					String infos[] = url.split(":");
 					if ("xayoudao".equals(infos[0])) {
 						String jumptab = infos[1];
 						String info = infos[2];
+						jumptab = jumptab.replace("//", "") ;
+						Log.d("***************************************************************", jumptab) ;
 						Intent intent = new Intent(BaseActivity.this,MainActivity.class);
 						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						intent.putExtra("currenttab", jumptab);
@@ -154,10 +161,14 @@ public class BaseActivity extends Activity implements CordovaInterface{
 					public boolean shouldOverrideUrlLoading(WebView webView,String url) {
 		    			   
 						 //  onLoadUrlListener.onloadUrl(url) ;
+						//Log.d("***************************************************************", url) ;
 					String infos[] = url.split(":");
 					if ("xayoudao".equals(infos[0])) {
 						String jumptab = infos[1];
 						String info = infos[2];
+						jumptab = jumptab.replace("//", "") ;
+						//jumptab = jumptab.substring(1, jumptab.length()-1) ;
+						Log.d("***************************************************************", jumptab) ;
 						Intent intent = new Intent(BaseActivity.this,MainActivity.class);
 						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						intent.putExtra("currenttab", jumptab);

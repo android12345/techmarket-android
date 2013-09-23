@@ -1,4 +1,4 @@
-/**
+/*43ab39a4cd27b0649498c20707529586f12b78fc*//**
  * @var {color} $loading-spinner-color
  * Background-color for the bars in the loading spinner.
  */
@@ -463,7 +463,7 @@ body {
   bottom: 0;
   left: 0;
 }
-/* line 17, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 18, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-sized > .x-dock-body {
   position: relative;
   display: -webkit-box;
@@ -475,11 +475,11 @@ body {
   min-height: 0;
   min-width: 0;
 }
-/* line 26, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 27, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-unsized, .x-dock.x-stretched {
   height: 100%;
 }
-/* line 29, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 30, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-unsized > .x-dock-body, .x-dock.x-stretched > .x-dock-body {
   position: relative;
   display: -webkit-box;
@@ -494,7 +494,7 @@ body {
   min-height: 0;
   min-width: 0;
 }
-/* line 37, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 38, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-unsized > .x-dock-body > *, .x-dock.x-stretched > .x-dock-body > * {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
@@ -502,25 +502,25 @@ body {
   min-height: 0;
   min-width: 0;
 }
-/* line 45, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 46, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-dock-vertical {
   -webkit-box-orient: vertical;
   -ms-flex-direction: column;
   flex-direction: column;
 }
-/* line 49, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 50, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-dock-horizontal {
   -webkit-box-orient: horizontal !important;
   -ms-flex-direction: row !important;
   flex-direction: row !important;
 }
-/* line 52, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 53, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-dock-horizontal > .x-dock-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 56, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 57, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-dock-horizontal > .x-dock-item.x-sized > .x-inner, .x-dock.x-dock-horizontal > .x-dock-item.x-sized > .x-body {
   width: auto;
   height: auto;
@@ -530,13 +530,13 @@ body {
   bottom: 0;
   left: 0;
 }
-/* line 61, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 62, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-dock-horizontal > .x-dock-item.x-unsized {
   -webkit-box-orient: vertical;
   -ms-flex-direction: column;
   flex-direction: column;
 }
-/* line 64, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 65, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-dock.x-dock-horizontal > .x-dock-item.x-unsized > * {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
@@ -545,19 +545,19 @@ body {
   min-width: 0;
 }
 
-/* line 79, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 80, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-ie .x-stretched.x-dock-horizontal > .x-dock-body {
   width: 0;
 }
-/* line 85, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 86, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-ie .x-stretched.x-dock-vertical > .x-dock-body {
   height: 0;
 }
-/* line 92, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 93, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-ie .x-has-width > .x-dock.x-unsized.x-dock-horizontal > .x-dock-body {
   width: 0;
 }
-/* line 98, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
+/* line 99, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/layout/_Dock.scss */
 .x-ie .x-has-height > .x-dock.x-unsized.x-dock-vertical > .x-dock-body {
   height: 0;
 }
@@ -868,7 +868,6 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #eee;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -1791,7 +1790,6 @@ audio {
 .x-form.x-floating .x-panel-inner,
 .x-form.x-floating > .x-body {
   z-index: 1;
-  background-color: #fff;
 }
 
 /* line 25, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/_Panel.scss */
@@ -2411,9 +2409,11 @@ audio {
 /* line 61, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-input-el {
   display: block;
+  font-size: 14px;
+  color: #606060;
 }
 
-/* line 65, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 67, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-field-mask {
   width: auto;
   height: auto;
@@ -2424,56 +2424,58 @@ audio {
   left: 0;
 }
 
-/* line 73, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 75, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-ie .x-field.x-field-text .x-field-mask, .x-ie .x-field.x-field-textarea .x-field-mask, .x-ie .x-field.x-field-search .x-field-mask {
   z-index: -1;
 }
 
-/* line 80, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 82, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-field-required .x-form-label:after {
   content: "*";
   display: inline;
 }
 
-/* line 92, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 94, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-spinner .x-component-outer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 95, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 97, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-spinner .x-component-outer > * {
   width: auto;
 }
-/* line 100, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 102, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-spinner .x-field-input {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 0px;
   flex: 1 0 0px;
 }
-/* line 103, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 105, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-spinner .x-field-input .x-input-el {
   width: 100%;
   text-align: center;
 }
-/* line 110, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 112, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-spinner .x-field-input input::-webkit-outer-spin-button,
 .x-spinner .x-field-input input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* line 116, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 118, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-spinner .x-spinner-button {
   text-align: center;
   border: 1px solid #ccc !important;
+  border-radius: 30px;
   background-color: #eee;
 }
-/* line 123, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 126, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-spinner.x-field-grouped-buttons .x-input-el {
-  text-align: left;
+  text-align: center;
+  background: none;
 }
 
-/* line 132, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 136, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-select-overlay .x-list-label {
   white-space: nowrap;
   overflow: hidden;
@@ -2481,19 +2483,19 @@ audio {
   display: block;
 }
 
-/* line 140, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 144, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
-/* line 146, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 150, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-field-number input::-webkit-outer-spin-button,
 .x-field-number input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 152, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 156, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-field-input .x-clear-icon {
   display: none;
   width: 10px;
@@ -2504,59 +2506,59 @@ input[type="search"]::-webkit-search-cancel-button {
   right: 0;
 }
 
-/* line 163, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 167, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-field-clearable .x-clear-icon {
   display: block;
 }
-/* line 167, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 171, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-field-clearable .x-field-input {
   padding-right: 10px;
 }
 
-/* line 172, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 176, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-android .x-input-el {
   -webkit-text-fill-color: #000;
 }
 
-/* line 176, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 180, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-android .x-empty .x-input-el {
   -webkit-text-fill-color: #A9A9A9;
 }
 
-/* line 180, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 184, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-android .x-item-disabled .x-input-el {
   -webkit-text-fill-color: #b3b3b3;
 }
 
-/* line 186, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 190, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-form-fieldset .x-form-fieldset-inner {
   border: 1px solid #ccc;
   overflow: hidden;
 }
-/* line 192, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 196, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-form-fieldset .x-dock .x-dock-body {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
-/* line 198, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 202, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-form-fieldset-title {
   font-weight: bold;
 }
-/* line 201, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 205, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-form-fieldset-title .x-innerhtml {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* line 206, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 210, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-form-fieldset-instructions {
   text-align: center;
 }
 
-/* line 211, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
+/* line 215, ../../touch/resources/themes/stylesheets/sencha-touch/base/src/form/_Panel.scss */
 .x-ie .x-field-select .x-field-mask {
   z-index: 3;
 }
@@ -3287,8 +3289,9 @@ textarea {
   height: 40px;
   padding: 0 3px;
   position: relative;
+  color: #878787;
 }
-/* line 19, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 20, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-button:before {
   content: '';
   position: absolute;
@@ -3297,17 +3300,17 @@ textarea {
   bottom: 1px;
   left: 1px;
 }
-/* line 31, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 32, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-button .x-button-label, .x-button .x-badge {
-  color: #252525;
+  color: #606060;
 }
 
-/* line 45, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 46, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-button-pressing .x-button-label, .x-button-pressing .x-badge {
-  color: #FAFAFA;
+  color: #606060;
 }
 
-/* line 52, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 53, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-button-round,
 .x-button-decline-round,
 .x-button-confirm-round {
@@ -3317,7 +3320,7 @@ textarea {
   -o-border-radius: 20px;
   border-radius: 20px;
 }
-/* line 55, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 56, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-button-round:before,
 .x-button-decline-round:before,
 .x-button-confirm-round:before {
@@ -3328,27 +3331,27 @@ textarea {
   border-radius: 19px;
 }
 
-/* line 60, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 61, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-button-label, .x-badge {
   position: relative;
   font-size: 14px;
   padding: 0 5px;
 }
 
-/* line 66, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 67, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-badge {
   right: 5px;
 }
 
-/* line 73, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 74, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button {
   margin: 0 5px;
-  padding: 0 10px 2px 14px;
+  padding: 0 10px 2px 10px;
   height: 33px;
   width: 66px;
 }
 
-/* line 85, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 86, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-light .x-button {
   border-color: #0A5A88;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #05608f), color-stop(100%, #04557f));
@@ -3360,7 +3363,7 @@ textarea {
   -moz-box-shadow: 0 0 0 1px #1c79ad;
   box-shadow: 0 0 0 1px #1c79ad;
 }
-/* line 90, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 91, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-light .x-button:before {
   border-color: #10618A;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3498cb), color-stop(100%, #0974a8));
@@ -3372,11 +3375,11 @@ textarea {
   -moz-box-shadow: inset 0 1px 0 0 #55aad5;
   box-shadow: inset 0 1px 0 0 #55aad5;
 }
-/* line 97, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 98, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-light .x-button-label, .x-toolbar-light .x-badge {
-  color: #fff;
+  color: #606060;
 }
-/* line 102, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 103, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-light .x-button-pressed,
 .x-toolbar-light .x-button-pressing {
   border-color: #061C27;
@@ -3389,7 +3392,7 @@ textarea {
   -moz-box-shadow: 0 0 0 1px #3889b7;
   box-shadow: 0 0 0 1px #3889b7;
 }
-/* line 107, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 108, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-light .x-button-pressed:before,
 .x-toolbar-light .x-button-pressing:before {
   border-color: #0A2532;
@@ -3403,14 +3406,14 @@ textarea {
   box-shadow: inset 0 -1px 0 0 #1b4e64;
 }
 
-/* line 129, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 130, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-dark .x-button-label, .x-toolbar-dark .x-badge {
   color: #fefeff;
   font-size: 14px;
   text-shadow: 0px -1px 1px #240000;
 }
 
-/* line 149, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 150, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-plain .x-button-pressed .x-button-label, .x-toolbar-plain .x-button-pressed .x-badge,
 .x-toolbar-plain .x-button-pressing .x-button-label,
 .x-toolbar-plain .x-button-pressing .x-badge,
@@ -3420,7 +3423,7 @@ textarea {
 .x-toolbar-neutral .x-button-pressing .x-badge {
   color: #fff;
 }
-/* line 153, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 154, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-plain .x-button-pressed:before,
 .x-toolbar-plain .x-button-pressing:before,
 .x-toolbar-neutral .x-button-pressed:before,
@@ -3435,7 +3438,7 @@ textarea {
   box-shadow: inset 0 -1px 0 0 #176982;
 }
 
-/* line 163, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 164, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back,
 .x-toolbar .x-button-forward {
   height: 45px !important;
@@ -3456,13 +3459,13 @@ textarea {
   flex-direction: column;
   overflow: hidden;
 }
-/* line 174, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 175, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back .x-button-icon,
 .x-toolbar .x-button-forward .x-button-icon {
   margin: 0 auto;
   display: block;
 }
-/* line 178, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 179, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back .x-button-icon:before,
 .x-toolbar .x-button-forward .x-button-icon:before {
   font-family: "Chalkboard";
@@ -3470,7 +3473,7 @@ textarea {
   content: '<';
   padding-left: 5px;
 }
-/* line 186, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 187, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back .x-button-label, .x-toolbar .x-button-back .x-badge,
 .x-toolbar .x-button-forward .x-button-label,
 .x-toolbar .x-button-forward .x-badge {
@@ -3478,20 +3481,20 @@ textarea {
   font-size: 9px;
   line-height: 12px;
 }
-/* line 192, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 193, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back:before,
 .x-toolbar .x-button-forward:before {
   background: transparent;
   background-image: none;
 }
-/* line 198, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 199, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back.x-button-pressed, .x-toolbar .x-button-back.x-button-pressing,
 .x-toolbar .x-button-forward.x-button-pressed,
 .x-toolbar .x-button-forward.x-button-pressing {
   background: transparent;
   background-image: none;
 }
-/* line 202, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 203, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back.x-button-pressed:before, .x-toolbar .x-button-back.x-button-pressing:before,
 .x-toolbar .x-button-forward.x-button-pressed:before,
 .x-toolbar .x-button-forward.x-button-pressing:before {
@@ -3499,11 +3502,11 @@ textarea {
   background-image: none;
 }
 
-/* line 209, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 210, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back {
   padding-right: 15px;
 }
-/* line 212, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 213, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-back:before {
   -webkit-transform: rotate(6deg);
   -moz-transform: rotate(6deg);
@@ -3522,11 +3525,11 @@ textarea {
   border-radius: 0;
 }
 
-/* line 223, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 224, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-forward {
   padding-left: 15px;
 }
-/* line 226, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 227, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-forward:before {
   -webkit-transform: rotate(-6deg);
   -moz-transform: rotate(-6deg);
@@ -3544,17 +3547,17 @@ textarea {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 237, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 238, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar .x-button-forward .x-button-icon:before {
   content: '>';
 }
 
-/* line 245, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 246, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-hasbadge {
   overflow: visible;
 }
 
-/* line 249, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 250, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-badge {
   background-color: #0378B2;
   border: 1px solid #0796D0;
@@ -3569,12 +3572,12 @@ textarea {
   top: -2px;
 }
 
-/* line 261, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 262, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-button-icon {
   width: 1.5em;
   height: 1.5em;
 }
-/* line 265, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 266, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-button-icon:before {
   color: #fff;
   font-size: 20px;
@@ -3945,7 +3948,7 @@ textarea {
   content: "l";
 }
 
-/* line 305, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 306, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-segmentedbutton {
   padding: 0 2px;
   height: 33px;
@@ -3956,7 +3959,7 @@ textarea {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 311, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 312, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-segmentedbutton .x-button {
   border: 0;
   height: 27px;
@@ -3970,11 +3973,11 @@ textarea {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 318, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 319, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-segmentedbutton .x-button:last-child {
   margin-right: 0;
 }
-/* line 322, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 323, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-segmentedbutton .x-button:before {
   top: 0;
   right: 0;
@@ -3987,7 +3990,7 @@ textarea {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 332, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 333, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-segmentedbutton .x-first:before {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -3996,7 +3999,7 @@ textarea {
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-/* line 337, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 338, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-segmentedbutton .x-last:before {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -4006,7 +4009,7 @@ textarea {
   border-bottom-right-radius: 4px;
 }
 
-/* line 344, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 345, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-dark .x-segmentedbutton {
   border-color: #060606;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #010101), color-stop(100%, #060606));
@@ -4019,7 +4022,7 @@ textarea {
   box-shadow: 0 0 0 1px #393939;
 }
 
-/* line 356, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 357, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-plain .x-segmentedbutton .x-button-pressing,
 .x-toolbar-plain .x-segmentedbutton .x-button-pressed,
 .x-toolbar-neutral .x-segmentedbutton .x-button-pressing,
@@ -4029,7 +4032,7 @@ textarea {
   background-image: none;
 }
 
-/* line 363, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 364, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-light .x-segmentedbutton {
   border-color: #0A5A88;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #05608f), color-stop(100%, #04557f));
@@ -4042,7 +4045,7 @@ textarea {
   box-shadow: none;
 }
 
-/* line 372, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 373, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-plain .x-segmentedbutton,
 .x-toolbar-neutral .x-segmentedbutton {
   border-color: #CECACE;
@@ -4055,17 +4058,17 @@ textarea {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 377, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 378, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-plain .x-segmentedbutton .x-button,
 .x-toolbar-neutral .x-segmentedbutton .x-button {
   background-image: none;
 }
-/* line 382, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 383, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-plain .x-button-icon:before,
 .x-toolbar-neutral .x-button-icon:before {
   color: #000;
 }
-/* line 388, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
+/* line 389, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Button.scss */
 .x-toolbar-plain .x-button-pressing .x-button-icon:before,
 .x-toolbar-plain .x-button-pressed .x-button-icon:before,
 .x-toolbar-neutral .x-button-pressing .x-button-icon:before,
@@ -4119,12 +4122,12 @@ textarea {
 /* line 29, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_MessageBox.scss */
 .x-form.x-floating,
 .x-panel.x-floating {
-  background: #fff;
+  background: #e8e8e8;
   padding: 0;
   border: 0;
 }
 
-/* line 35, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_MessageBox.scss */
+/* line 36, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_MessageBox.scss */
 .x-msgbox-text {
   padding: 10px;
   font-size: 14px;
@@ -4132,7 +4135,7 @@ textarea {
 
 /* line 3, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Panel.scss */
 .x-panel {
-  background: #fff;
+  background: #ececec;
 }
 
 /* line 2, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Sheet.scss */
@@ -4214,7 +4217,7 @@ textarea {
 .x-toolbar-dark,
 .x-tabbar-dark {
   background: url("../images/title.png") no-repeat;
-  background-size: 100% 52px;
+  background-size: 100% 50px;
 }
 
 /* line 37, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/_Toolbar.scss */
@@ -4223,6 +4226,7 @@ textarea {
   font-size: 24px;
   font-weight: normal;
   text-shadow: 0px 1px 1px #99290b;
+  width: 60%;
 }
 
 /**
@@ -4240,11 +4244,6 @@ textarea {
 /**
  * @class Ext.dataview.List
  */
-/* line 5, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
-.x-list {
-  background: #fff;
-}
-
 /* line 9, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
 .x-list-item {
   padding: 3px 6px;
@@ -4281,12 +4280,10 @@ textarea {
 /* line 43, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
 .x-item-selected {
   background-color: transparent !important;
-  -webkit-box-shadow: inset 0 0 0 2px #0aace5;
-  -moz-box-shadow: inset 0 0 0 2px #0aace5;
-  box-shadow: inset 0 0 0 2px #0aace5;
+  box-shadow: none;
 }
 
-/* line 48, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
+/* line 49, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
 .x-list .x-list-header {
   font-weight: normal;
   font-size: 14px;
@@ -4300,7 +4297,7 @@ textarea {
   background: linear-gradient(#fefefe, #dddddd);
 }
 
-/* line 57, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
+/* line 58, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
 .x-indexbar {
   color: #888;
   padding: 3px 0;
@@ -4311,17 +4308,17 @@ textarea {
   border-radius: 10px;
 }
 
-/* line 63, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
+/* line 64, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
 .x-indexbar-vertical {
   margin-right: 4px;
 }
 
-/* line 67, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
+/* line 68, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
 .x-indexbar-pressed {
   background: rgba(150, 150, 150, 0.2);
 }
 
-/* line 73, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
+/* line 74, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/dataview/_List.scss */
 .x-list-item-odd.x-list-item-tpl,
 .x-list-item-odd .x-dock-horizontal {
   background-color: #f2f2f2;
@@ -4372,10 +4369,10 @@ textarea {
  */
 /* line 9, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
 .x-form-label {
-  color: #292429;
-  font-size: 16px;
-  padding: 0 3px;
-  line-height: 50px;
+  color: #606060;
+  font-size: 14px;
+  padding: 0 3px 0 10px;
+  line-height: 40px;
 }
 /* line 15, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
 .x-form-label span {
@@ -4384,7 +4381,7 @@ textarea {
 
 /* line 20, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
 .x-field-input {
-  padding: 6px 3px;
+  padding: 3px 3px;
 }
 
 /* line 24, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
@@ -4414,18 +4411,9 @@ textarea {
 .x-input-password,
 .x-spinner-button {
   padding: 9px 5px;
-  border: 1px solid #C7C7C7;
-  background-color: #ffffff;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 0px 0 #f0f0f0;
-  -moz-box-shadow: inset 0 1px 0px 0 #f0f0f0;
-  box-shadow: inset 0 1px 0px 0 #f0f0f0;
+  border: none;
 }
-/* line 53, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
+/* line 54, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
 .x-field-focused .x-input-text, .x-field-focused
 .x-input-url, .x-field-focused
 .x-input-email, .x-field-focused
@@ -4438,7 +4426,7 @@ textarea {
   -moz-box-shadow: 0 0 0 1px #0aace5;
   box-shadow: 0 0 0 1px #0aace5;
 }
-/* line 58, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
+/* line 59, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
 .x-input-text::-webkit-input-placeholder,
 .x-input-url::-webkit-input-placeholder,
 .x-input-email::-webkit-input-placeholder,
@@ -4449,11 +4437,11 @@ textarea {
   font-style: italic;
 }
 
-/* line 64, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
+/* line 65, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
 .x-item-disabled input {
   color: #888;
 }
-/* line 68, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
+/* line 69, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Field.scss */
 .x-item-disabled .x-form-label {
   color: #bbb;
 }
@@ -4526,14 +4514,6 @@ textarea {
 
 /* line 44, ../../touch/resources/themes/stylesheets/sencha-touch/my/src/field/_Checkbox.scss */
 .x-input-checkbox:checked ~ .x-field-mask:after {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3498cb), color-stop(100%, #0974a8));
-  background: -webkit-linear-gradient(#3498cb, #0974a8);
-  background: -moz-linear-gradient(#3498cb, #0974a8);
-  background: -o-linear-gradient(#3498cb, #0974a8);
-  background: linear-gradient(#3498cb, #0974a8);
-  -webkit-box-shadow: inset 0 1px 0 0 #55aad5;
-  -moz-box-shadow: inset 0 1px 0 0 #55aad5;
-  box-shadow: inset 0 1px 0 0 #55aad5;
   content: '3';
 }
 
@@ -4612,9 +4592,9 @@ textarea {
 .x-spinner-button {
   margin: 6px 3px;
   padding: 0;
-  width: 30px !important;
+  width: 35px !important;
   line-height: 33px;
-  height: 36px;
+  height: 35px;
   font-weight: bold;
 }
 
@@ -4976,23 +4956,25 @@ textarea {
 /* line 19, ../sass/app.scss */
 .homeListFont {
   font-size: 12px;
+  line-height: 14px;
+  height: 28px;
   color: #b0b0b0;
   margin: 0;
   padding: 0;
   margin-bottom: 5px;
 }
 
-/* line 26, ../sass/app.scss */
+/* line 28, ../sass/app.scss */
 .articleListTitle {
   font-size: 13px;
   color: #595959;
   line-height: 20px;
-  height: 40px;
+  max-height: 40px;
   overflow: hidden;
   text-shadow: 0px 1px 1px #ffffff;
 }
 
-/* line 34, ../sass/app.scss */
+/* line 36, ../sass/app.scss */
 .articleListDate {
   font-size: 10px;
   text-align: right;
@@ -5000,8 +4982,183 @@ textarea {
   padding-right: 3px;
 }
 
-/* line 40, ../sass/app.scss */
+/* line 42, ../sass/app.scss */
 .backBtn {
   background: url("../images/back.png") no-repeat;
   background-size: 100% 100%;
+}
+
+/* line 46, ../sass/app.scss */
+.refresh {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 13px;
+  color: #595959;
+  line-height: 20px;
+  text-shadow: 0px 1px 1px #ffffff;
+}
+
+/* line 55, ../sass/app.scss */
+.shopListImg {
+  background: url(../images/inforImg.png);
+  width: 97px;
+  height: 74px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 62, ../sass/app.scss */
+.shopListTitle {
+  font-size: 16px;
+  line-height: 32px;
+  height: 32px;
+  overflow: hidden;
+  color: #595959;
+  text-shadow: 0px 1px 1px #ffffff;
+}
+
+/* line 70, ../sass/app.scss */
+.shopListContent {
+  font-size: 12px;
+  line-height: 20px;
+  height: 20px;
+  overflow: hidden;
+  color: #878787;
+}
+
+/* line 77, ../sass/app.scss */
+.productList {
+  text-align: center;
+  float: left;
+  width: 33%;
+  margin-top: 10px;
+}
+
+/* line 83, ../sass/app.scss */
+.productListFont {
+  font-size: 12px;
+  line-height: 14px;
+  width: 92px;
+  height: 28px;
+  color: #606060;
+  margin: 0 auto;
+}
+
+/* line 91, ../sass/app.scss */
+.productListImg {
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 4px #a0a0a0;
+  height: 68px;
+  width: 92px;
+}
+
+/* line 97, ../sass/app.scss */
+.productShop {
+  background: url(../images/productBg.png);
+  background-size: 100% 100%;
+  box-shadow: 0px 2px 4px #fff;
+}
+
+/* line 102, ../sass/app.scss */
+.productShopIcon {
+  width: 92px;
+  height: 68px;
+  box-shadow: 0px 0px 10px #222222;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  margin: 20px 5px 20px 10px;
+}
+
+/* line 110, ../sass/app.scss */
+.font1 {
+  font-size: 14px;
+  color: #eeeeee;
+  text-shadow: 0px 1px 1px #000;
+  line-height: 20px;
+}
+
+/* line 116, ../sass/app.scss */
+.font2 {
+  font-size: 12px;
+  color: #323232;
+  line-height: 28px;
+}
+
+/* line 121, ../sass/app.scss */
+.newsListFont {
+  font-size: 12px;
+  line-height: 14px;
+  height: 28px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+/* line 130, ../sass/app.scss */
+.newsDetailHead {
+  padding: 10px 10px 5px 10px;
+  border-bottom: 1px solid #a6a6a6;
+  box-shadow: 0px 1px 1px #fff;
+}
+
+/* line 135, ../sass/app.scss */
+.newsDetailTile {
+  color: #004c8d;
+  font-size: 16px;
+  text-align: center;
+  line-height: 24px;
+  text-shadow: 0px 1px 1px #fff;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+/* line 144, ../sass/app.scss */
+.newsDetailDate {
+  font-size: 10px;
+  color: #878787;
+  text-align: right;
+  line-height: 16px;
+}
+
+/* line 150, ../sass/app.scss */
+.newsDetailImg {
+  border: none;
+  box-shadow: 0px 0px 3px #666666;
+  width: 100%;
+  height: 150px;
+}
+
+/* line 156, ../sass/app.scss */
+.newsDetailContent {
+  padding: 0px 10px 10px 10px;
+  color: #686868;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+/* line 163, ../sass/app.scss */
+.btn2 {
+  margin: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px #878787;
+  color: #606060;
+  background: #e8e8e8;
+}
+
+/* line 171, ../sass/app.scss */
+.commetnReplay {
+  border: none;
+  background: none;
+  color: #1a6299;
+  font-size: 14px;
+}
+
+/* line 177, ../sass/app.scss */
+.formBorder {
+  border-bottom: 1px solid #b9c3cc;
+  box-shadow: 0px 1px 1px #fff;
 }

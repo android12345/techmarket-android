@@ -11,13 +11,14 @@
             */
         html, body {
             height: 100%;
-            background-color: #1985D0
+            background-image:  url("resources/images/splash.png");
+            background-size: cover;
+            background-color: #ececec;
         }
 
         #appLoadingIndicator {
             position: absolute;
-            top: 50%;
-            margin-top: -15px;
+            top: 90%;
             text-align: center;
             width: 100%;
             height: 30px;
@@ -30,14 +31,14 @@
         #appLoadingIndicator > * {
             background-color: #FFFFFF;
             display: inline-block;
-            height: 30px;
+            height: 10px;
             -webkit-border-radius: 15px;
             margin: 0 5px;
-            width: 30px;
-            opacity: 0.8;
+            width: 10px;
+            opacity: 0.5;
         }
 
-        @-webkit-keyframes appLoadingIndicator {
+        @-webkit-keyframes appLoadingIndicator{
             0% {
                 opacity: 0.8
             }
@@ -65,10 +66,9 @@ document.getElementsByTagName("head")[0].appendChild(d)}d=/MSIE 10/.test(navigat
 I=!1,r,k,o;try{o=l.localStorage,k=l.applicationCache}catch(N){}if("undefined"===typeof n)var n=l.Ext={};n.blink=function(b){var d=w(b.id+"-"+D+p);x("viewport","width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no");x("apple-mobile-web-app-capable","yes");x("apple-touch-fullscreen","yes");d?(b=new s(d),K(b)):q(p,function(c){b=new s(c);b.store();K(b)})}})(this);;Ext.blink({"id":"4c099f08-1272-4c41-ad2f-deaeaab6c68d"})</script>
     <script type="text/javascript">
         var Global = {
-            api_url: 'http://cloud.appmars.com',
-            app_id: '10'
+            api_url: 'http://market.xayoudao.com/',
+            app_title: '科技大市场'
         }
-
         var cordova = {exec: function (s, e, n, f, p) {
             console.log('call in ' + n + '.' + f + '(' + p + ')');
         }}

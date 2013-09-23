@@ -115,7 +115,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		
 		if("market".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
-					.setContent(home_intent));
+					.setContent(market_intent));
 			this.tabHost.setCurrentTabByTag("market");
 			message.setChecked(true);
 			market_intent.putExtra("appendurl",appendUrl) ;
@@ -139,7 +139,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		
 		if("mine".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("mine").setIndicator("我的")
-					.setContent(innovation_intent));
+					.setContent(mine_intent));
 			this.tabHost.setCurrentTabByTag("mine");
 			friend.setChecked(true);
 			mine_intent.putExtra("appendurl",appendUrl) ;
@@ -317,7 +317,8 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		if (event.getAction() == KeyEvent.ACTION_DOWN
 				&& event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
 			
-				webViewGoBack() ;
+				//webViewGoBack() ;
+			exit() ;
 	            return false; 
 			}
 		

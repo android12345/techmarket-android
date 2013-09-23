@@ -1,4 +1,4 @@
-/*87ac6b1a4f64109589db39720bf8539cccccb62f*//**
+/*a96a09cbd7bf5e6655418a0cb0573555718bb27d*//**
  * @class Global_CSS
  * Global CSS variables and mixins of Sencha Touch's Default Theme.
  */
@@ -6919,63 +6919,64 @@ body.x-desktop {
   color: black;
 }
 
-/* line 11, ../sass/app.scss */
+/* line 15, ../sass/app.scss */
 .moreFrom {
   line-height: 48px;
   margin: audo 7.5%;
-  box-shadow: 0px 0px 6px #474646;
+  box-shadow: 0 0 5px #636e75, 0 0 2px rgba(105, 110, 112, 0.63);
   border-radius: 4px;
   border: 0px;
   background-color: #d1d0d0;
 }
 
-/* line 20, ../sass/app.scss */
+/* line 24, ../sass/app.scss */
 .moreFrom2 {
   border-bottom: 1px inset rgba(63, 50, 50, 0.28);
   width: 95%;
   margin-left: 2.5%;
 }
 
-/* line 26, ../sass/app.scss */
+/* line 30, ../sass/app.scss */
 .moreFont1 {
   font-size: 18px;
   font-weight: bold;
   color: rgba(44, 44, 44, 0.85);
 }
 
-/* line 32, ../sass/app.scss */
-.button {
-  background: #f8860b;
-  color: #f8f8f8;
-  width: 85%;
-  box-shadow: 1px 1px 4px rgba(224, 214, 214, 0.49);
-  margin: 0px 7.5%;
-  height: 48px;
-  font-size: 20px;
-  font-weight: lighter;
-  font-style: inherit;
-}
-
-/* line 44, ../sass/app.scss */
+/* line 38, ../sass/app.scss */
 .moreFrom div {
-  background-color: #d1d0d0;
+  background-color: #e8e8e8;
 }
 
-/* line 48, ../sass/app.scss */
+/* line 42, ../sass/app.scss */
 .moreFrom div:active {
   background-color: #7787a7;
 }
 
-/* line 52, ../sass/app.scss */
+/* line 46, ../sass/app.scss */
 .moreFrom_go {
   float: right;
   margin-top: 10px;
 }
 
-/* line 57, ../sass/app.scss */
-.x-toolbar-dark .x-button {
-  margin-bottom: 15px;
-  background: transparent;
-  border: 1px solid rgba(28, 40, 88, 0.68);
-  width: 80%;
+/* line 51, ../sass/app.scss */
+.x-button.x-button-confirm {
+  background-image: none;
+  margin: 20px;
+  border: 0px;
+  box-shadow: 0 0 5px #636e75, 0 0 2px rgba(105, 110, 112, 0.63);
+  background: #f8860b;
+  color: #f8f8f8;
+  width: 85%;
+  margin: 0px 7.5%;
+  height: 48px;
+  font-weight: lighter;
+  font-style: inherit;
+  font-size: 15px;
+  background-image: none;
+}
+
+/* line 67, ../sass/app.scss */
+#login {
+  margin-bottom: 10px;
 }
