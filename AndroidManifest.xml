@@ -101,7 +101,7 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar"
+            android:theme="@style/umeng_socialize_popup_dialog_anim"
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
         <activity android:name=".HomeActivity" >
@@ -131,7 +131,7 @@
             android:name=".RegisterActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar"
+            android:theme="@style/umeng_socialize_popup_dialog_anim"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <!-- Socialize config Start -->

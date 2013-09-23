@@ -51,6 +51,14 @@ public class MarketActivity extends BaseActivity {
 		cordovaWebView = (CordovaWebView) findViewById(R.id.marketcordovaWebView);
 		
 		
+		
+//		super.initAndLoadUrl(cordovaWebView,"file:///android_asset/market/index.html");
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
 		if(loadInfo!=null && !"".equals(loadInfo)){
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/market/index.html#"+loadInfo);
@@ -60,13 +68,6 @@ public class MarketActivity extends BaseActivity {
 		}else{
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/market/index.html");
 		}
-//		super.initAndLoadUrl(cordovaWebView,"file:///android_asset/market/index.html");
-	}
-
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
 	}
 
 	@Override

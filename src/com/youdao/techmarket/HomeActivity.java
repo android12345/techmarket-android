@@ -2,10 +2,8 @@ package com.youdao.techmarket;
 
 import org.apache.cordova.CordovaWebView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 /**
  * 首页
@@ -52,6 +50,15 @@ public class HomeActivity extends BaseActivity  {
 		
 		
 		
+		
+		
+		
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
 		if(loadInfo!=null && !"".equals(loadInfo)){
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html#"+loadInfo);
@@ -61,13 +68,6 @@ public class HomeActivity extends BaseActivity  {
 		}else{
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");
 		}
-		
-		
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
 		 
 	}
 

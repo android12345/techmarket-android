@@ -38,19 +38,20 @@ public class MoreActivity extends BaseActivity  {
 //					intent.putExtra("currenttab", jumptab) ;
 //					intent.putExtra("appendurl", info) ;
 //					startActivity(intent) ;
-//				}
+//				} 
 //
 //			}
 //		}) ;
-		
 		cordovaWebView = (CordovaWebView) findViewById(R.id.morecordovaWebView);
-		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/more/index.html") ;
+		
 	}
 
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
+		
+		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/more/index.html") ;
 	}
 	@Override
 	protected void onPause() {
