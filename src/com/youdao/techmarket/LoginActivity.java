@@ -2,6 +2,7 @@ package com.youdao.techmarket;
 
 import org.json.JSONObject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -55,6 +56,8 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 	private YouDaoApplication application ;
 	
 	private SharedPreferences preferences = null ;
+	
+	private Context context ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -63,8 +66,17 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 		preferences = this.getSharedPreferences("push_user", MODE_PRIVATE) ;
 		initView() ;
 		setOnclickListener() ;
+		
 	}
 	
+	public LoginActivity(Context context) {
+		
+		 this.context = context ;
+	}
+	
+	public LoginActivity() {
+		// TODO Auto-generated constructor stub
+	}
 	private void initView(){
 		
 		application = (YouDaoApplication) this.getApplication() ;
@@ -141,7 +153,7 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 			
 			String userid = preferences.getString("user_id", null) ;
 			
-			Toast.makeText(LoginActivity.this, userid, 0).show() ;
+			//Toast.makeText(LoginActivity.this, userid, 0).show() ;
 			
 			UserManager.getInstance().login(LoginActivity.this, username_content,userpass_content,userid, new JsonHttpResponseHandler(){
 				
@@ -167,6 +179,10 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 							application.setUser(user) ;
 //							Intent intent = new Intent(LoginActivity.this,MainActivity.class) ;
 //							startActivity(intent) ;
+							Log.d("666666666666666666666666666666666", loginSuccess+"") ;
+							if(loginSuccess!=null){
+								loginSuccess.loginsuccess() ;
+							}
 							finish();
 						}
 					}else{
@@ -236,10 +252,40 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
+		if(loginSuccess!=null){
+			loginSuccess = null ;
+		}
+		
+		
 	}
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
 	}
+	
+	
+	private static LoginSuccess loginSuccess ;
+	
+	
+	
+//	public void setLoginSuccessListener(LoginSuccess loginSuccess){
+//		this.loginSuccess = loginSuccess ;
+//		
+//	Log.d("88888888888888888888888888888888888888888888888888", loginSuccess+"") ;
+//		
+//	}
+	
+	
+
+	public static void setLoginSuccessListener(LoginSuccess loginSuccess1) {
+		loginSuccess = loginSuccess1;
+	}
+
+
+
+	public interface LoginSuccess{
+		public void loginsuccess() ;
+	}
+
 }

@@ -19,8 +19,10 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import com.umeng.analytics.MobclickAgent;
+import com.youdao.techmarket.LoginActivity.LoginSuccess;
 import com.youdao.techmarket.utils.AppManager;
 import com.youdao.techmarket.utils.CommUtils;
 import com.youdao.techmarket.utils.NetWorkUtils;
@@ -32,7 +34,7 @@ import com.youdao.techmarket.utils.NetWorkUtils;
  */
 
 @SuppressWarnings("deprecation")
-public class MainActivity extends TabActivity implements OnCheckedChangeListener{
+public class MainActivity extends TabActivity implements OnCheckedChangeListener,LoginSuccess{
 
 	public TabHost tabHost = null ;
 	private RadioButton home = null ;
@@ -45,6 +47,8 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	private BroadcastReceiver connectionReceiver;
 	
 	private YouDaoApplication application ;
+	
+//	private LoginActivity activity = null ;
 
 	public MainActivity() {
 		// TODO Auto-generated constructor stub
@@ -200,24 +204,26 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 					more.setChecked(false);
 					prokeyinoo.setChecked(false);
 				}else{//如果没有登录，就让去登录
-	
+					LoginActivity.setLoginSuccessListener(MainActivity.this) ;
 					Intent intent = new Intent(MainActivity.this,LoginActivity.class) ;
 					startActivity(intent) ;
 					
-					message.setChecked(false);
 					friend.setChecked(false);
-					more.setChecked(false);
-					prokeyinoo.setChecked(false);
-					new Handler().postDelayed(new Runnable() {
-						
-						@Override
-						public void run() {
-							// TODO Auto-generated method stub
-							tabHost.setCurrentTabByTag("home");
-							home.setChecked(true);
-							
-						}
-					}, 500) ;
+					
+//					message.setChecked(false);
+//					friend.setChecked(false);
+//					more.setChecked(false);
+//					prokeyinoo.setChecked(false);
+//					new Handler().postDelayed(new Runnable() {
+//						
+//						@Override
+//						public void run() {
+//							// TODO Auto-generated method stub
+//							tabHost.setCurrentTabByTag("home");
+//							home.setChecked(true);
+//							
+//						}
+//					}, 500) ;
 					
 					
 				}
@@ -375,6 +381,16 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		super.onPause();
 		MobclickAgent.onPause(this);
 	}
+
+	@Override
+	public void loginsuccess() {
+		// TODO Auto-generated method stub
+		friend.setChecked(true) ;
+		
+	//	Toast.makeText(MainActivity.this, "made diao le mei ", 0).show() ;
+	}
+
+	
 	
 //		private boolean isExit; 
 //	    @Override  
