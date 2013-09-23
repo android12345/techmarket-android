@@ -2,10 +2,8 @@ package com.youdao.techmarket;
 
 import org.apache.cordova.CordovaWebView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 /**
  * 掌上创新界面
@@ -49,6 +47,14 @@ public class PocketInnovationActivity extends BaseActivity {
 		
 		cordovaWebView = (CordovaWebView) findViewById(R.id.inoocordovaWebView);
 		
+		
+		//super.initAndLoadUrl(cordovaWebView, "file:///android_asset/innovation/index.html") ;
+	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
 		
 		//Toast.makeText(PocketInnovationActivity.this, "made:"+loadInfo, 1).show() ;
@@ -63,13 +69,6 @@ public class PocketInnovationActivity extends BaseActivity {
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/innovation/index.html");
 		}
 	
-		//super.initAndLoadUrl(cordovaWebView, "file:///android_asset/innovation/index.html") ;
-	}
-	
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
 	}
 	
 	@Override
