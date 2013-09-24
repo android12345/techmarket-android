@@ -126,7 +126,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			
 			market_intent.putExtra("appendurl",appendUrl) ;
 			
-		Toast.makeText(MainActivity.this, "get value:"+appendUrl, 0).show() ;
+	//	Toast.makeText(MainActivity.this, "get value:"+appendUrl, 0).show() ;
 		//	this.tabHost.setCurrentTabByTag("market");
 			message.setChecked(true);
 		}
