@@ -44,7 +44,15 @@ public class MineActivity extends BaseActivity{
 		
 		cordovaWebView = (CordovaWebView) findViewById(R.id.minecordovaWebView);
 		
-	    
+		String loadInfo = getIntent().getStringExtra("appendurl") ;
+		if(loadInfo!=null && !"".equals(loadInfo)){
+			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/mine/index.html#"+loadInfo);
+			
+			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%mine", "file:///android_asset/mine/index.html#"+loadInfo) ;
+			
+		}else{
+			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/mine/index.html");
+		}
 	//	super.initAndLoadUrl(cordovaWebView, "file:///android_asset/mine/index.html") ;
 	  
 	}
@@ -63,15 +71,7 @@ public class MineActivity extends BaseActivity{
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		String loadInfo = getIntent().getStringExtra("appendurl") ;
-		if(loadInfo!=null && !"".equals(loadInfo)){
-			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/mine/index.html#"+loadInfo);
-			
-			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%mine", "file:///android_asset/mine/index.html#"+loadInfo) ;
-			
-		}else{
-			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/mine/index.html");
-		}
+	
 	}
 
 }

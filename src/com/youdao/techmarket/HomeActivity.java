@@ -50,15 +50,6 @@ public class HomeActivity extends BaseActivity  {
 		
 		
 		
-		
-		
-		
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
 		if(loadInfo!=null && !"".equals(loadInfo)){
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html#"+loadInfo);
@@ -68,7 +59,14 @@ public class HomeActivity extends BaseActivity  {
 		}else{
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");
 		}
-		 
+		
+		
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
 	}
 
 	@Override
