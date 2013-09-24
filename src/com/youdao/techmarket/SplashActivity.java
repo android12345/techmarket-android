@@ -168,6 +168,7 @@ public class SplashActivity extends BaseActivity implements OnClickListener{
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+		finish() ;
 		
 	}
 	@Override

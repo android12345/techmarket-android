@@ -19,6 +19,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import com.umeng.analytics.MobclickAgent;
 import com.youdao.techmarket.LoginActivity.LoginSuccess;
@@ -116,9 +117,12 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
 					.setContent(market_intent));
 			//this.tabHost.setCurrentTabByTag("market");
-			message.setChecked(true);
+			
 			market_intent.putExtra("appendurl",appendUrl) ;
 			
+			Toast.makeText(MainActivity.this, "get value:"+appendUrl, 0).show() ;
+			this.tabHost.setCurrentTabByTag("market");
+			message.setChecked(true);
 		}
 		
 		tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
@@ -127,8 +131,10 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			tabHost.addTab(tabHost.newTabSpec("innovation").setIndicator("掌上创新")
 					.setContent(innovation_intent));
 			//this.tabHost.setCurrentTabByTag("innovation");
-			prokeyinoo.setChecked(true);
+			
 			innovation_intent.putExtra("appendurl",appendUrl) ;
+			
+			prokeyinoo.setChecked(true);
 //			Toast.makeText(MainActivity.this, "haha", 0).show();
 		}
 		tabHost.addTab(tabHost.newTabSpec("innovation").setIndicator("掌上创新")
@@ -140,8 +146,10 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			tabHost.addTab(tabHost.newTabSpec("mine").setIndicator("我的")
 					.setContent(mine_intent));
 			//this.tabHost.setCurrentTabByTag("mine");
-			friend.setChecked(true);
+			
 			mine_intent.putExtra("appendurl",appendUrl) ;
+			
+			friend.setChecked(true);
 //			Toast.makeText(MainActivity.this, "haha", 0).show();
 		}
 		
@@ -182,7 +190,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 				prokeyinoo.setChecked(false);
 				break;
 			case R.id.radio_button_message: // 大市场
-				market_intent.putExtra("appendurl","") ;
+				//market_intent.putExtra("appendurl","") ;
 				this.tabHost.setCurrentTabByTag("market");
 				
 				home.setChecked(false);
@@ -191,7 +199,6 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 				prokeyinoo.setChecked(false);
 				break;
 			case R.id.radio_button_proketinoo:
-				innovation_intent.putExtra("appendurl","") ;
 				this.tabHost.setCurrentTabByTag("innovation");
 				message.setChecked(false);
 				friend.setChecked(false);

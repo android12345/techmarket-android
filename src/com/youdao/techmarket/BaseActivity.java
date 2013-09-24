@@ -106,14 +106,14 @@ public class BaseActivity extends Activity implements CordovaInterface{
 	   
 	    			//xayoudao://infomars:loadpageinfo/123456
 	    			   //             xayoudao://market:showPolicy
-
+	    			   Log.d("***************************************************************", url) ;
 	    			
 					String infos[] = url.split(":");
 					if ("xayoudao".equals(infos[0])) {
 						String jumptab = infos[1];
 						String info = infos[2];
 						jumptab = jumptab.replace("//", "") ;
-						Log.d("***************************************************************", jumptab) ;
+					//	Log.d("***************************************************************", jumptab) ;
 						Intent intent = new Intent(BaseActivity.this,MainActivity.class);
 						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						intent.putExtra("currenttab", jumptab);
@@ -162,13 +162,14 @@ public class BaseActivity extends Activity implements CordovaInterface{
 		    			   
 						 //  onLoadUrlListener.onloadUrl(url) ;
 						//Log.d("***************************************************************", url) ;
+						  Log.d("***************************************************************", url) ;
 					String infos[] = url.split(":");
 					if ("xayoudao".equals(infos[0])) {
 						String jumptab = infos[1];
 						String info = infos[2];
 						jumptab = jumptab.replace("//", "") ;
 						//jumptab = jumptab.substring(1, jumptab.length()-1) ;
-						Log.d("***************************************************************", jumptab) ;
+						//Log.d("***************************************************************", jumptab) ;
 						Intent intent = new Intent(BaseActivity.this,MainActivity.class);
 						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						intent.putExtra("currenttab", jumptab);

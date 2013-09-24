@@ -4,6 +4,7 @@ import org.apache.cordova.CordovaWebView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * 大市场界面
@@ -50,10 +51,13 @@ public class MarketActivity extends BaseActivity {
 
 		cordovaWebView = (CordovaWebView) findViewById(R.id.marketcordovaWebView);
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
+		
+		Toast.makeText(MarketActivity.this, "调用了:"+loadInfo, 0).show() ;
+		Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%market", "file:///android_asset/home/index.html#"+loadInfo) ;
 		if(loadInfo!=null && !"".equals(loadInfo)){
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/market/index.html#"+loadInfo);
 			
-			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%market", "file:///android_asset/home/index.html#"+loadInfo) ;
+		//	Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%market", "file:///android_asset/home/index.html#"+loadInfo) ;
 			
 		}else{
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/market/index.html");
