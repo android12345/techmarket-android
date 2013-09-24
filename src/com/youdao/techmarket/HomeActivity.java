@@ -49,7 +49,6 @@ public class HomeActivity extends BaseActivity  {
 //		}) ;
 		
 		
-		
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
 		if(loadInfo!=null && !"".equals(loadInfo)){
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html#"+loadInfo);
@@ -57,8 +56,11 @@ public class HomeActivity extends BaseActivity  {
 			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%home", "file:///android_asset/home/index.html#"+loadInfo) ;
 			
 		}else{
+			
+		//	Toast.makeText(HomeActivity.this, "调用了",0).show() ;
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");
 		}
+		
 		
 		
 	}
@@ -66,7 +68,7 @@ public class HomeActivity extends BaseActivity  {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		//cordovaWebView.loadUrl("file:///android_asset/home/index.html") ;
+		cordovaWebView.loadUrl("file:///android_asset/home/index.html") ;
 	}
 
 	@Override
@@ -79,6 +81,12 @@ public class HomeActivity extends BaseActivity  {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
+	}
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		
 	}
 //	public class MainFrameTask extends AsyncTask<Integer, String, Integer>{
 //		private FragmentHome mainFrame = null;

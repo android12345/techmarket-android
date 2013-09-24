@@ -46,8 +46,6 @@ public class MarketActivity extends BaseActivity {
 //			}
 //		}) ;
 		
-		
-		
 
 		cordovaWebView = (CordovaWebView) findViewById(R.id.marketcordovaWebView);
 		String loadInfo = getIntent().getStringExtra("appendurl") ;

@@ -69,7 +69,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		buildTabSpec();  
 	
 	}
-	private Intent market_intent ,mine_intent,more_intent,innovation_intent;
+	private Intent market_intent ,mine_intent,more_intent,innovation_intent,home_intent;
 	// 设置选项卡标签和要跳转的Activity
 	private void buildTabSpec() {
 		
@@ -84,12 +84,18 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		
 		
 	
-		Intent home_intent = new Intent(this, HomeActivity.class);
+			
+		
+			 home_intent = new Intent(this, HomeActivity.class);
+		
+		
 //		if("home".equals(whichtab)){ //处理推送过跳转过来接收信息
 //			String loadinfo = intent.getStringExtra("loadinfo") ;
 //			home_intent.putExtra("loadinfo",loadinfo) ;
 //		}
 
+			 
+			 
 		market_intent = new Intent(this, MarketActivity.class);
 		
 		 mine_intent = new Intent(this, MineActivity.class);
@@ -102,10 +108,10 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		if("home".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("home").setIndicator("首页")
 					.setContent(home_intent));
-			//this.tabHost.setCurrentTabByTag("home");
-			home.setChecked(true);
-			home_intent.putExtra("appendurl",appendUrl) ;
+	//		this.tabHost.setCurrentTabByTag("home");
 			
+			home_intent.putExtra("appendurl",appendUrl) ;
+			home.setChecked(true);
 //			Toast.makeText(MainActivity.this, "haha", 0).show();
 		}
 		
@@ -116,12 +122,12 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		if("market".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
 					.setContent(market_intent));
-			//this.tabHost.setCurrentTabByTag("market");
+		//	this.tabHost.setCurrentTabByTag("market");
 			
 			market_intent.putExtra("appendurl",appendUrl) ;
 			
-		//	Toast.makeText(MainActivity.this, "get value:"+appendUrl, 0).show() ;
-			this.tabHost.setCurrentTabByTag("market");
+		Toast.makeText(MainActivity.this, "get value:"+appendUrl, 0).show() ;
+		//	this.tabHost.setCurrentTabByTag("market");
 			message.setChecked(true);
 		}
 		
@@ -130,7 +136,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		if("innovation".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("innovation").setIndicator("掌上创新")
 					.setContent(innovation_intent));
-			//this.tabHost.setCurrentTabByTag("innovation");
+		//	this.tabHost.setCurrentTabByTag("innovation");
 			
 			innovation_intent.putExtra("appendurl",appendUrl) ;
 			
@@ -157,6 +163,8 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 				.setContent(mine_intent));
 		tabHost.addTab(tabHost.newTabSpec("more").setIndicator("更多")
 				.setContent(more_intent));
+		
+		
 	}
 
 	// 初始化RadioButton并添加监听事件 
@@ -192,7 +200,6 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			case R.id.radio_button_message: // 大市场
 				//market_intent.putExtra("appendurl","") ;
 				this.tabHost.setCurrentTabByTag("market");
-				
 				home.setChecked(false);
 				friend.setChecked(false);
 				more.setChecked(false);
