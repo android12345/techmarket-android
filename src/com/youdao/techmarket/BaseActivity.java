@@ -174,6 +174,7 @@ public class BaseActivity extends Activity implements CordovaInterface{
 						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						intent.putExtra("currenttab", jumptab);
 						intent.putExtra("appendurl", info);
+						
 						startActivity(intent);
 					}
 		    			   
@@ -222,6 +223,7 @@ public class BaseActivity extends Activity implements CordovaInterface{
 			cordovaWebView.loadUrl(url);   
 		}
 	       
+		cordovaWebView.getSettings().setJavaScriptEnabled(true);
 	       
 	}
 	/**

@@ -9,7 +9,7 @@ import android.os.Bundle;
  * @author junjun
  *
  */
-public class MoreActivity extends BaseActivity  {
+public class MoreActivity extends BaseActivity {
 	
 	private CordovaWebView cordovaWebView = null ;
 
@@ -43,6 +43,7 @@ public class MoreActivity extends BaseActivity  {
 //			}
 //		}) ;
 		cordovaWebView = (CordovaWebView) findViewById(R.id.morecordovaWebView);
+		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/more/index.html") ;
 		
 	}
 
@@ -51,7 +52,7 @@ public class MoreActivity extends BaseActivity  {
 		// TODO Auto-generated method stub
 		super.onResume();
 		
-		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/more/index.html") ;
+		
 	}
 	@Override
 	protected void onPause() {
@@ -63,6 +64,4 @@ public class MoreActivity extends BaseActivity  {
 		// TODO Auto-generated method stub
 		super.onDestroy();
 	}
-
-	
 }

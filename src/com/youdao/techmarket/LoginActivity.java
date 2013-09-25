@@ -10,20 +10,19 @@ import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.youdao.techmarket.api.UserManager;
 import com.youdao.techmarket.domain.MessageResult;
 import com.youdao.techmarket.domain.User;
 import com.youdao.techmarket.utils.CommUtils;
-import com.youdao.techmarket.utils.DeviceUtils;
 import com.youdao.techmarket.widgets.InputMethodRelativeLayout;
 import com.youdao.techmarket.widgets.InputMethodRelativeLayout.OnSizeChangedListenner;
 
@@ -182,7 +181,11 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 							Log.d("666666666666666666666666666666666", loginSuccess+"") ;
 							if(loginSuccess!=null){
 								loginSuccess.loginsuccess() ;
+								loginSuccess.loginsuccess(true) ;
 							}
+//							if(cancelListner!=null){
+//								cancelListner.cancelLogin(true) ;
+//							}
 							finish();
 						}
 					}else{
@@ -255,7 +258,9 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 		if(loginSuccess!=null){
 			loginSuccess = null ;
 		}
-		
+//		if(cancelListner!=null){
+//			cancelListner = null ;
+//		}
 		
 	}
 	@Override
@@ -266,17 +271,6 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 	
 	
 	private static LoginSuccess loginSuccess ;
-	
-	
-	
-//	public void setLoginSuccessListener(LoginSuccess loginSuccess){
-//		this.loginSuccess = loginSuccess ;
-//		
-//	Log.d("88888888888888888888888888888888888888888888888888", loginSuccess+"") ;
-//		
-//	}
-	
-	
 
 	public static void setLoginSuccessListener(LoginSuccess loginSuccess1) {
 		loginSuccess = loginSuccess1;
@@ -286,6 +280,24 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 
 	public interface LoginSuccess{
 		public void loginsuccess() ;
+		public void loginsuccess(boolean flag) ;
 	}
+	
+//	static CancelListner cancelListner ;
+//	public static void setCancelListener(CancelListner cancelListner1){
+//		cancelListner = cancelListner1 ;
+//	}
+//	
+//	public interface CancelListner{
+//		public void cancelLogin(boolean flag) ;
+//	}
 
+	
+	
+//	@Override
+//	public void onBackPressed() {
+//		// TODO Auto-generated method stub
+//		super.onBackPressed();
+//		cancelListner.cancelLogin(false) ;
+//	}
 }

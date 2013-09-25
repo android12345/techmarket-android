@@ -30,7 +30,7 @@ import com.youdao.techmarket.utils.NetWorkUtils;
 /**
  * 程序的主入口
  * @author fengxue
- *
+ * 
  */
 
 @SuppressWarnings("deprecation")
@@ -114,9 +114,12 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			home.setChecked(true);
 //			Toast.makeText(MainActivity.this, "haha", 0).show();
 		}
+		else{
+			tabHost.addTab(tabHost.newTabSpec("home").setIndicator("首页")
+					.setContent(home_intent));
+		}
+			
 		
-		tabHost.addTab(tabHost.newTabSpec("home").setIndicator("首页")
-				.setContent(home_intent));
 		
 		
 		if("market".equals(currenttab)){
@@ -129,10 +132,12 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	//	Toast.makeText(MainActivity.this, "get value:"+appendUrl, 0).show() ;
 		//	this.tabHost.setCurrentTabByTag("market");
 			message.setChecked(true);
+		}else{
+			
+			tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
+					.setContent(market_intent));
 		}
 		
-		tabHost.addTab(tabHost.newTabSpec("market").setIndicator("大市场")
-				.setContent(market_intent));
 		if("innovation".equals(currenttab)){
 			tabHost.addTab(tabHost.newTabSpec("innovation").setIndicator("掌上创新")
 					.setContent(innovation_intent));
@@ -157,10 +162,12 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			
 			friend.setChecked(true);
 //			Toast.makeText(MainActivity.this, "haha", 0).show();
+		}else{
+			tabHost.addTab(tabHost.newTabSpec("mine").setIndicator("我的")
+					.setContent(mine_intent));
 		}
 		
-		tabHost.addTab(tabHost.newTabSpec("mine").setIndicator("我的")
-				.setContent(mine_intent));
+		
 		tabHost.addTab(tabHost.newTabSpec("more").setIndicator("更多")
 				.setContent(more_intent));
 		
@@ -181,7 +188,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		more.setOnCheckedChangeListener(this);
 		prokeyinoo.setOnCheckedChangeListener(this);
 	}
-
+	private boolean flag = false ;
 	/**
 	 * 当选项卡改变的时候调用的方法
 	 */
@@ -247,6 +254,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 				break;
 			case R.id.radio_button_more: // 更多
 				this.tabHost.setCurrentTabByTag("more");
+				LoginActivity.setLoginSuccessListener(MainActivity.this) ;
 				message.setChecked(false);
 				friend.setChecked(false);
 				home.setChecked(false);
@@ -403,10 +411,43 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	@Override
 	public void loginsuccess() {
 		// TODO Auto-generated method stub
-		friend.setChecked(true) ;
+						
+				friend.setChecked(true) ;
+		
+		
+		/*else if(tabHost.getCurrentTabTag().equals("more")){
+			Activity activity=getLocalActivityManager().getActivity("more");
+			CordovaWebView currentCordovaWebView = (CordovaWebView) activity.findViewById(R.id.morecordovaWebView) ;
+			currentCordovaWebView.loadUrl("file:///android_asset/more/index.html") ;
+			Toast.makeText(MainActivity.this, "asdfa", 0).show() ;
+		//	more.setChecked(true) ;
+		}*/
 		
 	//	Toast.makeText(MainActivity.this, "made diao le mei ", 0).show() ;
 	}
+
+	@Override
+	public void loginsuccess(boolean flag) {
+		// TODO Auto-generated method stub
+		if(flag){
+			
+			Activity activity=getLocalActivityManager().getActivity("more");
+			CordovaWebView currentCordovaWebView = (CordovaWebView) activity.findViewById(R.id.morecordovaWebView) ;
+			currentCordovaWebView.reload() ;
+			Toast.makeText(MainActivity.this, "调用了", 0).show() ;
+		}
+	}
+
+//	@Override
+//	public void cancelLogin(boolean flag) {
+//		// TODO Auto-generated method stub
+//		if(flag){
+//			Toast.makeText(MainActivity.this, "调用了", 0).show() ;
+//			Activity activity=getLocalActivityManager().getActivity("more");
+//			CordovaWebView currentCordovaWebView = (CordovaWebView) activity.findViewById(R.id.morecordovaWebView) ;
+//			currentCordovaWebView.reload() ;
+//		}
+//	}
 
 	
 	

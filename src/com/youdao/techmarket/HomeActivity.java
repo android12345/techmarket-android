@@ -68,7 +68,7 @@ public class HomeActivity extends BaseActivity  {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		cordovaWebView.loadUrl("file:///android_asset/home/index.html") ;
+		//cordovaWebView.loadUrl("file:///android_asset/home/index.html") ;
 	}
 
 	@Override
