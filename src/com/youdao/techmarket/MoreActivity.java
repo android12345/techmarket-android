@@ -43,7 +43,6 @@ public class MoreActivity extends BaseActivity {
 //			}
 //		}) ;
 		cordovaWebView = (CordovaWebView) findViewById(R.id.morecordovaWebView);
-		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/more/index.html") ;
 		
 	}
 
@@ -51,7 +50,7 @@ public class MoreActivity extends BaseActivity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		
+		super.initAndLoadUrl(cordovaWebView, "file:///android_asset/more/index.html") ;
 		
 	}
 	@Override

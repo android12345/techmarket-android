@@ -231,7 +231,7 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 					LoginActivity.setLoginSuccessListener(MainActivity.this) ;
 					Intent intent = new Intent(MainActivity.this,LoginActivity.class) ;
 					startActivity(intent) ;
-					
+					flag = true ;
 					friend.setChecked(false);
 					
 //					message.setChecked(false);
@@ -411,8 +411,10 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	@Override
 	public void loginsuccess() {
 		// TODO Auto-generated method stub
-						
-				friend.setChecked(true) ;
+			
+					friend.setChecked(true) ;
+				
+				
 		
 		
 		/*else if(tabHost.getCurrentTabTag().equals("more")){
@@ -424,18 +426,6 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		}*/
 		
 	//	Toast.makeText(MainActivity.this, "made diao le mei ", 0).show() ;
-	}
-
-	@Override
-	public void loginsuccess(boolean flag) {
-		// TODO Auto-generated method stub
-		if(flag){
-			
-			Activity activity=getLocalActivityManager().getActivity("more");
-			CordovaWebView currentCordovaWebView = (CordovaWebView) activity.findViewById(R.id.morecordovaWebView) ;
-			currentCordovaWebView.reload() ;
-			Toast.makeText(MainActivity.this, "调用了", 0).show() ;
-		}
 	}
 
 //	@Override

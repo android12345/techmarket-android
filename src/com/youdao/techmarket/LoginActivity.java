@@ -181,7 +181,7 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 							Log.d("666666666666666666666666666666666", loginSuccess+"") ;
 							if(loginSuccess!=null){
 								loginSuccess.loginsuccess() ;
-								loginSuccess.loginsuccess(true) ;
+								
 							}
 //							if(cancelListner!=null){
 //								cancelListner.cancelLogin(true) ;
@@ -280,7 +280,7 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 
 	public interface LoginSuccess{
 		public void loginsuccess() ;
-		public void loginsuccess(boolean flag) ;
+		
 	}
 	
 //	static CancelListner cancelListner ;
