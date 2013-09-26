@@ -75,6 +75,9 @@ public class GetUserInfoPlugin extends CordovaPlugin {
 			if ("userType".equals(arg)) {
 				callbackContext.success(user.getUserType());
 			}
+		}else{
+			callbackContext.success("");
+			
 		}
 	}
 	/**
