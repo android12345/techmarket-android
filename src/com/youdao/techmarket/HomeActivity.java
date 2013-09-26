@@ -60,9 +60,7 @@ public class HomeActivity extends BaseActivity  {
 		//	Toast.makeText(HomeActivity.this, "调用了",0).show() ;
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");
 		}
-		
-		
-		
+
 	}
 
 	@Override
