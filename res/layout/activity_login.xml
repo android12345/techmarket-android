@@ -52,7 +52,7 @@
                 android:id="@+id/et_login_username"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/qq_login"
+              
                 android:background="@drawable/login_username"
                 android:focusable="true"
                 android:hint="用户名"

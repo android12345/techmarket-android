@@ -54,7 +54,6 @@
                     android:id="@+id/et_register_username"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/qq_register"
                     android:background="@drawable/register_et_1"
                     android:focusable="true"
                     android:hint="用户名"
