@@ -79,7 +79,6 @@
                     android:layout_below="@+id/et_register_phonenum"
                     android:background="@drawable/register_et_3"
                     android:hint="邮　箱"
-                    android:maxLength="15"
                     android:paddingLeft="5dip"
                     android:singleLine="true" />
 
@@ -91,7 +90,6 @@
                     android:background="@drawable/register_et_3"
                     android:hint="密　码"
                     android:inputType="textPassword"
-                    android:maxLength="15"
                     android:paddingLeft="5dip"
                     android:singleLine="true" />
 

@@ -77,7 +77,6 @@ public class GetUserInfoPlugin extends CordovaPlugin {
 			}
 		}else{
 			callbackContext.success("");
-			
 		}
 	}
 	/**

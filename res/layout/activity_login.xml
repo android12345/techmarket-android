@@ -67,7 +67,6 @@
                 android:background="@drawable/login_userpass"
                 android:hint="密 码"
                 android:inputType="textPassword"
-                android:maxLength="15"
                 android:paddingLeft="5dip"
                 android:singleLine="true" />
 

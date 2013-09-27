@@ -61,7 +61,7 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_login) ;
-		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+		getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		preferences = this.getSharedPreferences("push_user", MODE_PRIVATE) ;
 		initView() ;
 		setOnclickListener() ;
