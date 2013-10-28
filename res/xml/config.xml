@@ -71,8 +71,7 @@
     <!-- 消息Toast插件 -->
     
      <plugin name="Messages" value="com.youdao.techmarket.plugin.Messages"/>
-     <!-- 拨打电话界面插件 -->
-     <plugin name="Redirect" value="com.youdao.techmarket.plugin.Redirect"/>
+     
      <!-- 获取用户id插件 -->
      <plugin name="GetApplicationInfo" value="com.youdao.techmarket.plugin.GetApplicationInfo"/>
      

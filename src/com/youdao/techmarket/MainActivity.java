@@ -19,7 +19,6 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.TabHost;
-import android.widget.Toast;
 
 import com.umeng.analytics.MobclickAgent;
 import com.youdao.techmarket.LoginActivity.LoginSuccess;
