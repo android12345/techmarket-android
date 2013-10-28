@@ -117,6 +117,7 @@ public class ShareUtil {
 		if (wxAppID != null && !wxAppID.equals("") && !wxAppID.equals("wxkey")) {
 
 			api = WXAPIFactory.createWXAPI(context, wxAppID);
+			api.registerApp(wxAppID);
 			Log.d(TAG, "share Weixin " + wxAppID);
 			// 检查是否安装了微信
 			if (checkInstallwx(context)) {
