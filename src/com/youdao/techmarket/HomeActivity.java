@@ -49,13 +49,6 @@ public class HomeActivity extends BaseActivity  {
 //		}) ;
 		
 		
-	
-
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
 		//cordovaWebView.loadUrl("file:///android_asset/home/index.html") ;
 		String loadInfo = getIntent().getStringExtra("appendurl") ;
 		if(loadInfo!=null && !"".equals(loadInfo)){
@@ -68,7 +61,15 @@ public class HomeActivity extends BaseActivity  {
 		//	Toast.makeText(HomeActivity.this, "调用了",0).show() ;
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");
 		}
+
 	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+	
+	}
+	
 
 	@Override
 	protected void onDestroy() {
@@ -80,6 +81,7 @@ public class HomeActivity extends BaseActivity  {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
+		
 	}
 	@Override
 	protected void onStop() {
