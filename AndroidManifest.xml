@@ -101,6 +101,7 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:theme="@style/umeng_socialize_popup_dialog_anim"
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
@@ -116,10 +117,15 @@
         </activity>
         <activity android:name=".BaseActivity" >
         </activity>
-        <activity
-            android:name=".FindPasswordActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+      
+        <activity android:name=".GetBackPasswordActivity"
+            android:screenOrientation="portrait"></activity>
+        
+        <activity android:name=".ModifyPassActivity"
+             android:screenOrientation="portrait"></activity>
+        
+        <activity android:name=".SmsVerifyActivity"
+             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

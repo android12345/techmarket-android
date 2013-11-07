@@ -43,6 +43,9 @@ public class MessageResult {
 	 * {"root":{"userExpandInfo":{},"data":{"token":"VEtWUEFWXkxFSkNaWhYUFRcJFB0JFRU=","userType":"0"},"code":0,"userInfo":{},"success":true}}
 	 * 
 	 * jsonObject.optJSONObject("root").optInt("code")
+	 * 
+	 * 11-07 14:11:27.971: D/------------------------------------(13883): {"message":"账号与手机号码不匹配","success":true,"code":15}
+
 	 */
 	 
 	public static MessageResult prase(JSONObject jsonObject) {

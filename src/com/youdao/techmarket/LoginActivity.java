@@ -99,7 +99,7 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 		register.setOnClickListener(registerOnclickListener) ;
 		login.setOnClickListener(loginOnClickListener) ;
 		
-		//findpass_ll.setOnClickListener(findpassOnClickListener) ;
+		findpass_ll.setOnClickListener(findpassOnClickListener) ;
 		
 	}
 	private  View.OnClickListener showPassClickListener = new View.OnClickListener() {
@@ -118,7 +118,7 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 		
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(LoginActivity.this,FindPasswordActivity.class) ;
+			Intent intent = new Intent(LoginActivity.this,GetBackPasswordActivity.class) ;
 			startActivity(intent) ;
 			
 		}

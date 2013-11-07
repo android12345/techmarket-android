@@ -68,10 +68,51 @@ public class UserManager {
 		HttpClientUtils.post(ServicesHolder.api(ServicesHolder.REGISTER), params, context, handler) ;
 		
 	}
-	public void findpassword(){
+	/**
+	 * 找回密码--填写信息(getBackPassword)
+	 * @param context   上下文 
+	 * @param userCode  登录用户名
+	 * @param contact 手机号
+	 * @param handler
+	 */
+	public void findpasswordinfo(Context context,String userCode,String contact,AsyncHttpResponseHandler handler){
+		Map<String, Object> params = new HashMap<String, Object>() ;
+		params.put("userCode",userCode ) ;
+		params.put("contact",contact ) ;
+		
+		HttpClientUtils.post(ServicesHolder.api(ServicesHolder.FIND_PASS_INFO), params, context, handler) ;
+	}
+	
+	/**
+	 * 找回密码--验证短信验证码(active)
+	 * @param context   上下文 
+	 * @param userCode  登录用户名
+	 * @param authCode   手机验证码
+	 * @param handler
+	 */
+	public void smsverify(Context context,String userCode ,String authCode,AsyncHttpResponseHandler handler){
+		
+		Map<String, Object> params = new HashMap<String, Object>() ;
+		params.put("userCode",userCode ) ;
+		params.put("authCode",authCode ) ;
+		
+		HttpClientUtils.post(ServicesHolder.api(ServicesHolder.SMS_VERIFY), params, context, handler) ;
 		
 	}
-	public void loginout(){
+	
+	/**
+	 * 找回密码--验证通过修改密码(findPassword)
+	 * @param context  上下文 
+	 * @param userCode  用户名
+	 * @param newUserPwd 新密码
+	 * @param handler
+	 */
+	public void verifysuccessModifyPass(Context context,String userCode ,String newUserPwd,AsyncHttpResponseHandler handler){
+		Map<String, Object> params = new HashMap<String, Object>() ;
+		params.put("userCode",userCode ) ;
+		params.put("newUserPwd",newUserPwd ) ;
 		
+		HttpClientUtils.post(ServicesHolder.api(ServicesHolder.VERIFY_SUCCESS_FINDPASS), params, context, handler) ;
 	}
+	
 }
