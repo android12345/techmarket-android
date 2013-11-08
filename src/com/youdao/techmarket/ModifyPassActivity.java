@@ -2,16 +2,18 @@ package com.youdao.techmarket;
 
 import org.json.JSONObject;
 
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.youdao.techmarket.api.UserManager;
-import com.youdao.techmarket.utils.CommUtils;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.youdao.techmarket.api.UserManager;
+import com.youdao.techmarket.utils.CommUtils;
 /**
  * 找回密码--验证通过修改密码(findPassword) activity
  * @author fengxue
@@ -23,19 +25,32 @@ public class ModifyPassActivity extends BaseActivity {
 	
 	private String uname = null ;
 
+	private TextView sms_modify_tv ; //这里短信验证和修改新密码用的是同一个布局 只是字不一样和提交按钮不一样而已。
+	
+	private ImageView submit_button = null ;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+		
 		super.onCreate(savedInstanceState);
-		super.setContentView(R.layout.activity_modifypass) ;
+		super.setContentView(R.layout.activity_smsverify) ;
 		
 		uname = getIntent().getStringExtra("username") ;
 		
-		newPassWord = (EditText) this.findViewById(R.id.newpass) ;
+		sms_modify_tv = (TextView)this.findViewById(R.id.sms_modify_tv) ;
+		
+		sms_modify_tv.setText("设置新密码") ;
+		
+		newPassWord = (EditText) this.findViewById(R.id.verfiycode) ;
+		
+		newPassWord.setHint("请输入新密码") ;
 		
 		
-		this.findViewById(R.id.submit).setOnClickListener(submitOnclickListener) ;
+		submit_button = (ImageView) this.findViewById(R.id.submit) ;
+		
+		submit_button.setBackgroundResource(R.drawable.modifypass_submitbutton_selector) ; //设置按钮的样式为提交
+		
+		submit_button.setOnClickListener(submitOnclickListener) ;
 		
 		
 	}
@@ -47,7 +62,7 @@ public class ModifyPassActivity extends BaseActivity {
 		public void onClick(View v) {
 			String newpass_content = newPassWord.getText().toString().trim() ;
 			if(TextUtils.isEmpty(newpass_content) || TextUtils.isEmpty(uname)){
-				CommUtils.startProgressDialog(ModifyPassActivity.this, "新密码不能为空!") ;
+				CommUtils.showMessage("新密码不能为空!", ModifyPassActivity.this) ;
 				return  ;
 			}
 			
@@ -61,12 +76,8 @@ public class ModifyPassActivity extends BaseActivity {
 				@Override
 				public void onSuccess(JSONObject jsonObject) {
 					super.onSuccess(jsonObject) ;
-					
-//					Log.d("7777777777777777777777", result.success()+"") ;
-				//	Log.d("7777777777777777777777", jsonObject.optJSONObject("root").optInt("code")+"") ;
-					
+
 					Log.d("***********************************************", jsonObject.toString()) ;
-					
 					
 					int code = jsonObject.optInt("code") ;
 					String message = jsonObject.optString("message") ;

@@ -19,14 +19,13 @@ import com.youdao.techmarket.utils.CommUtils;
  */
 public class GetBackPasswordActivity extends BaseActivity {
 	
-	private EditText username = null ;
+	private EditText username = null ;  //用户名
 	
-	private EditText phonenum = null ;
+	private EditText phonenum = null ; // 手机号
 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_getbackpassword) ;
 		
@@ -38,14 +37,13 @@ public class GetBackPasswordActivity extends BaseActivity {
 		this.findViewById(R.id.submit).setOnClickListener(submitOnClickListener) ;
 		
 	}
-
+	//初始化组件
 	private void initview() {
 		this.username = (EditText) this.findViewById(R.id.username) ;
 		this.phonenum = (EditText) this.findViewById(R.id.phonenmu) ;
-		
-		
+
 	}
-	
+	//按钮的监听事件 
 	private View.OnClickListener submitOnClickListener = new View.OnClickListener() {
 		
 		@Override
@@ -69,11 +67,7 @@ public class GetBackPasswordActivity extends BaseActivity {
 				@Override
 				public void onSuccess(JSONObject jsonObject) {
 					super.onSuccess(jsonObject) ;
-					
-				//	MessageResult result = MessageResult.prase(jsonObject) ;
-//					Log.d("7777777777777777777777", result.success()+"") ;
-				//	Log.d("7777777777777777777777", jsonObject.optJSONObject("root").optInt("code")+"") ;
-					
+
 					int code = jsonObject.optInt("code") ;
 					String message = jsonObject.optString("message") ;
 					Log.d("------------------------------------", jsonObject.toString()) ;
@@ -103,12 +97,7 @@ public class GetBackPasswordActivity extends BaseActivity {
 					super.onFailure(arg0, arg1);
 					CommUtils.stopProgressDialog() ;
 				}
-				
-				
-				
 			}) ;
-	
-			
 		}
 	};
 

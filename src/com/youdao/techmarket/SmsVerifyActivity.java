@@ -2,18 +2,16 @@ package com.youdao.techmarket;
 
 import org.json.JSONObject;
 
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.youdao.techmarket.api.UserManager;
-import com.youdao.techmarket.domain.MessageResult;
-import com.youdao.techmarket.utils.CommUtils;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.Program.TextureType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.youdao.techmarket.api.UserManager;
+import com.youdao.techmarket.utils.CommUtils;
 /**
  *找回密码--验证短信验证码(active) activity
  * @author fengxue
@@ -21,11 +19,9 @@ import android.widget.EditText;
  */
 public class SmsVerifyActivity extends BaseActivity {
 	
+	private EditText verfiycode = null ; //验证码
 	
-	private EditText verfiycode = null ;
-	
-	private String username = null ;
-
+	private String username = null ; //用户名
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +35,6 @@ public class SmsVerifyActivity extends BaseActivity {
 		
 		username = getIntent().getStringExtra("username") ;
 		
-		
 	}
 	
 	
@@ -49,7 +44,7 @@ public class SmsVerifyActivity extends BaseActivity {
 		public void onClick(View v) {
 			String verfiycode_content = verfiycode.getText().toString().trim() ;
 			if(TextUtils.isEmpty(verfiycode_content) || TextUtils.isEmpty(username)){
-				CommUtils.startProgressDialog(SmsVerifyActivity.this, "验证码不能为空!") ;
+				CommUtils.showMessage("验证码不能为空!", SmsVerifyActivity.this) ;
 				return  ;
 			}
 			UserManager.getInstance().smsverify(SmsVerifyActivity.this, username, verfiycode_content, new JsonHttpResponseHandler(){
@@ -64,11 +59,7 @@ public class SmsVerifyActivity extends BaseActivity {
 				public void onSuccess(JSONObject jsonObject) {
 					super.onSuccess(jsonObject) ;
 					
-//					Log.d("7777777777777777777777", result.success()+"") ;
-				//	Log.d("7777777777777777777777", jsonObject.optJSONObject("root").optInt("code")+"") ;
-					
 					Log.d("+++++++++++++++++++++++++++++++++++++++++++++++", jsonObject.toString()) ;
-					
 					
 					int code = jsonObject.optInt("code") ;
 					String message = jsonObject.optString("message") ;
