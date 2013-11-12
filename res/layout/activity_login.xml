@@ -23,7 +23,6 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription=""
             android:src="@drawable/logo" />
     </LinearLayout>
 
@@ -55,7 +54,7 @@
               
                 android:background="@drawable/login_username"
                 android:focusable="true"
-                android:hint="用户名"
+                android:hint="@string/username"
                 android:paddingLeft="5dip"
                 android:singleLine="true" />
 
@@ -65,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/et_login_username"
                 android:background="@drawable/login_userpass"
-                android:hint="密 码"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:paddingLeft="5dip"
                 android:singleLine="true" />
@@ -78,75 +77,38 @@
 
                 <LinearLayout
                     android:id="@+id/showpass_ll"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.0"
+                    style="@style/findpass_ll_style"
                     android:background="@drawable/login_showpass"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                     >
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginRight="8dip"
+                       style="@style/findpass_ll_image_style"
                         android:src="@drawable/show_pass" />
 
                     <TextView
                         android:id="@+id/show_pass_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="显示密码"
-                        android:textColor="#eb8225"
-                        android:textSize="14sp" />
+                        style="@style/findpass_ll_textview_style"
+                        android:text="@string/showpass"
+                         />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/findpass_ll"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.0"
+                     style="@style/findpass_ll_style"
                     android:background="@drawable/login_findpass"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                   >
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginRight="8dip"
+                        style="@style/findpass_ll_image_style"
                         android:src="@drawable/find_pass" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="找回密码"
-                        android:textColor="#eb8225"
-                        android:textSize="14sp" />
+                       style="@style/findpass_ll_textview_style"
+                        android:text="@string/findpass"
+                         />
                 </LinearLayout>
             </LinearLayout>
-
-            <!--
-            <ImageView
-                android:id="@+id/lv_showpassword"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/et_login_userpass"
-                android:layout_below="@+id/et_login_userpass"
-                android:layout_marginTop="5dip"
-                android:contentDescription=""
-                android:src="@drawable/login_showpass" />
-
-            <ImageView
-                android:id="@+id/forget_pass"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/et_login_userpass"
-                android:layout_below="@+id/et_login_userpass"
-                android:layout_marginTop="5dip"
-                android:contentDescription=""
-                android:src="@drawable/login_findpass" />
-            -->
+            
         </RelativeLayout>
 
         <RelativeLayout

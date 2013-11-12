@@ -29,7 +29,17 @@
      <string name="name">NAME</string>
      <string name="weixin">微信</string>
      <string name="friend">朋友圈</string>
-
+     
+     
+     <string name="username">用户名</string>
+     <string name="password">密 码</string>
+     <string name="showpass">显示密码</string>
+     <string name="findpass">找回密码</string>
+	 <string name="home">主页</string>
+	 <string name="market">大市场</string>
+	 <string name="pronic">掌上创新</string>
+	 <string name="mine">我的</string>
+	 <string name="more">更多</string>
 
 
 </resources>

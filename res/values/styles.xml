@@ -59,7 +59,50 @@
     	<item name="android:windowNoTitle">true</item>
 	</style> 
 	
+	<!-- login findapss style start -->
+	<style name="findpass_ll_style">
+	    <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_weight">1.0</item>
+	    <item name="android:gravity">center_vertical</item>
+	    <item name="android:orientation">horizontal</item>
+	</style>
 	
+	<style name="findpass_ll_image_style">
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_marginLeft">15dip</item>
+	    <item name="android:layout_marginRight">8dip</item>
+	</style>
 	
+	<style name="findpass_ll_textview_style">
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:textSize">14sp</item>
+	    <item name="android:textColor">#eb8225</item>
+	</style>
+	<!-- login findapss style end -->
 	
+	<!-- main view style start -->
+	<style name="main_radiongroup_framelayout_style">
+	     <item name="android:layout_width">0dip</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:layout_gravity">bottom</item>
+	    <item name="android:layout_weight">1.0</item>
+	</style>
+	
+	<style name="main_radiongroup_radiobutton_style">
+	     <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">52dip</item>
+	    <item name="android:layout_gravity">center</item>
+	    <item name="android:background">@android:color/transparent</item>
+	    <item name="android:button">@null</item>
+	    <item name="android:gravity">center</item>
+	    <item name="android:paddingBottom">4dip</item>
+	    <item name="android:paddingTop">6dip</item>
+	 	<item name="android:textSize">12sp</item>
+	 	<item name="android:textColor">@color/color_radiobutton</item>
+	</style>
+	
+	<!-- main view style end -->
 </resources>
