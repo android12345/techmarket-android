@@ -47,7 +47,6 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	
 	private YouDaoApplication application ;
 	
-//	private LoginActivity activity = null ;
 
 	public MainActivity() {
 		// TODO Auto-generated constructor stub
@@ -57,8 +56,6 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-//		tabHost = (TabHost) findViewById(R.id.tabhost) ;
-//		tabHost.setup() ;
 		application = (YouDaoApplication) this.getApplication() ;
 		
 		addNetWorkReceiver() ;
@@ -74,32 +71,19 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 		
 		Intent intent = getIntent() ;
 //		//接收推送过来要跳转到的tab
-//		String whichtab = intent.getStringExtra("whitchtab") ;
 		
 		
 		//接收应用内部点击按钮要跳罢的tab和地址  包括接收推送过来要跳转到的tab和要加载的页面地址
-		String currenttab = intent.getStringExtra("currenttab") ;
-		String appendUrl = intent.getStringExtra("appendurl") ;
-		
-		
-	
-			
-		
-			 home_intent = new Intent(this, HomeActivity.class);
-		
-		
-//		if("home".equals(whichtab)){ //处理推送过跳转过来接收信息
-//			String loadinfo = intent.getStringExtra("loadinfo") ;
-//			home_intent.putExtra("loadinfo",loadinfo) ;
-//		}
+		String currenttab = intent.getStringExtra("currenttab");
+		String appendUrl = intent.getStringExtra("appendurl");
 
-			 
-			 
+		home_intent = new Intent(this, HomeActivity.class);
+
 		market_intent = new Intent(this, MarketActivity.class);
-		
-		 mine_intent = new Intent(this, MineActivity.class);
-		 more_intent = new Intent(this, MoreActivity.class);
-		 innovation_intent = new Intent(this, PocketInnovationActivity.class);
+
+		mine_intent = new Intent(this, MineActivity.class);
+		more_intent = new Intent(this, MoreActivity.class);
+		innovation_intent = new Intent(this, PocketInnovationActivity.class);
 		
 		
 		

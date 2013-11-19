@@ -12,6 +12,7 @@ import android.widget.EditText;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.youdao.techmarket.api.UserManager;
 import com.youdao.techmarket.utils.CommUtils;
+import com.youdao.techmarket.utils.LogUtil;
 /**
  * 找回密码--填写信息(getBackPassword)  activity
  * @author fengxue
@@ -70,7 +71,7 @@ public class GetBackPasswordActivity extends BaseActivity {
 
 					int code = jsonObject.optInt("code") ;
 					String message = jsonObject.optString("message") ;
-					Log.d("------------------------------------", jsonObject.toString()) ;
+					LogUtil.d("------------------------------------", jsonObject.toString()) ;
 					if(0==code){
 						CommUtils.showMessage(message, GetBackPasswordActivity.this) ;
 						Intent intent = new Intent(GetBackPasswordActivity.this,SmsVerifyActivity.class) ;

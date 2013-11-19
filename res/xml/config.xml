@@ -32,7 +32,7 @@
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <!-- <content src="index.html" /> -->
 <!-- <content src="http://www.xayoudao.com/qujianglvyou/" /> -->
-    <log level="DEBUG"/>
+    <log level="ERROR"/>
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
 <plugins>
@@ -81,7 +81,7 @@
      <!-- 调用用户登录插件 -->
      <plugin name="LoginPlugin" value="com.youdao.techmarket.plugin.LoginPlugin"/>
      
-     
+     <!-- 清除用户信息插件 -->
      <plugin name="ClearAppCachePlugin" value="com.youdao.techmarket.plugin.ClearAppCachePlugin"/>
 </plugins>
 </cordova>

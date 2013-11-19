@@ -3,7 +3,8 @@ package com.youdao.techmarket;
 import org.apache.cordova.CordovaWebView;
 
 import android.os.Bundle;
-import android.util.Log;
+
+import com.youdao.techmarket.utils.LogUtil;
 
 /**
  * 首页
@@ -18,41 +19,7 @@ public class HomeActivity extends BaseActivity  {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.home_activity) ;
-//		mMainFrameTask  = new MainFrameTask(this);
-//		mMainFrameTask.execute();
 		cordovaWebView = (CordovaWebView) findViewById(R.id.hometutorialView);
-		
-		
-//		this.setOnLoadUrlListener(new OnLoadUrlListener() {
-//			
-//			@Override
-//			public void onloadUrl(String url) {
-//				Toast.makeText(HomeActivity.this, "123:"+url, 0).show() ;
-//				Log.d("++++++++++++++++++++++++++++++home", url) ;
-//				
-//				//initAndLoadUrl(cordovaWebView, "file:///android_asset/innovation/index.html") ;
-//				//tabHost.setCurrentTabByTag("innovation") ;
-//			//	xayoudao://infomars:loadpageinfo/123456
-//				
-//				String infos[] = url.split(":") ;
-//				if("xayoudao".equals(infos[0])){
-//					String jumptab = infos[1] ;
-//					String info = infos[2] ;
-//					Intent intent = new Intent(HomeActivity.this,MainActivity.class) ;
-//					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//					intent.putExtra("currenttab", jumptab) ;
-//					intent.putExtra("appendurl", info) ;
-//					startActivity(intent) ;
-//				}
-//
-//			}
-//		}) ;
-		
-		
-		//cordovaWebView.loadUrl("file:///android_asset/home/index.html") ;
-		
-		
-	
 	}
 
 	@Override
@@ -62,11 +29,10 @@ public class HomeActivity extends BaseActivity  {
 		if(loadInfo!=null && !"".equals(loadInfo)){
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html#"+loadInfo);
 			
-			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%home", "file:///android_asset/home/index.html#"+loadInfo) ;
+			LogUtil.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%home", "file:///android_asset/home/index.html#"+loadInfo) ;
 			
 		}else{
 			
-		//	Toast.makeText(HomeActivity.this, "调用了",0).show() ;
 			super.initAndLoadUrl(cordovaWebView, "file:///android_asset/home/index.html");
 		}
 

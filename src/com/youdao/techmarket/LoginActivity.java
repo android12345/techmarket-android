@@ -23,6 +23,7 @@ import com.youdao.techmarket.api.UserManager;
 import com.youdao.techmarket.domain.MessageResult;
 import com.youdao.techmarket.domain.User;
 import com.youdao.techmarket.utils.CommUtils;
+import com.youdao.techmarket.utils.LogUtil;
 import com.youdao.techmarket.widgets.InputMethodRelativeLayout;
 import com.youdao.techmarket.widgets.InputMethodRelativeLayout.OnSizeChangedListenner;
 
@@ -152,8 +153,6 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 			
 			String userid = preferences.getString("user_id", null) ;
 			
-			//Toast.makeText(LoginActivity.this, userid, 0).show() ;
-			
 			UserManager.getInstance().login(LoginActivity.this, username_content,userpass_content,userid, new JsonHttpResponseHandler(){
 				
 				@Override
@@ -167,18 +166,16 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 					super.onSuccess(jsonObject) ;
 					
 					MessageResult result = MessageResult.prase(jsonObject) ;
-//					Log.d("7777777777777777777777", result.success()+"") ;
-				//	Log.d("7777777777777777777777", jsonObject.optJSONObject("root").optInt("code")+"") ;
 					
-					Log.d("7777777777777777777777", result.success()+"") ;
+					LogUtil.d("7777777777777777777777", result.success()+"") ;
+					
 					if(result.success()){
-						Log.d("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", jsonObject.toString()) ;
+						LogUtil.d("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", jsonObject.toString()) ;
 						User user = User.parser(jsonObject) ;
 						if(user!=null){
 							application.setUser(user) ;
 //							Intent intent = new Intent(LoginActivity.this,MainActivity.class) ;
 //							startActivity(intent) ;
-							Log.d("666666666666666666666666666666666", loginSuccess+"") ;
 							if(loginSuccess!=null){
 								loginSuccess.loginsuccess() ;
 								
@@ -220,13 +217,13 @@ public class LoginActivity extends BaseActivity implements OnSizeChangedListenne
 			// 显示密码，如："123456"
 			userpass.setTransformationMethod(HideReturnsTransformationMethod
 					.getInstance());
-			show_pass_tv.setText("隐藏密码") ;
+			show_pass_tv.setText(getResources().getString(R.string.hidepass)) ;
 			userpass.setSelection(pointpass.length()) ; //光标定位到密码长度处
 		} else {
 			// 隐藏密码，如: "."
 			userpass.setTransformationMethod(PasswordTransformationMethod
 					.getInstance());
-			show_pass_tv.setText("显示密码") ;
+			show_pass_tv.setText(getResources().getString(R.string.showpass)) ;
 			userpass.setSelection(pointpass.length()) ;//光标定位到密码长度处
 		}
 		mbDisplayFlg = !mbDisplayFlg;

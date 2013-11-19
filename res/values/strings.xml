@@ -40,6 +40,9 @@
 	 <string name="pronic">掌上创新</string>
 	 <string name="mine">我的</string>
 	 <string name="more">更多</string>
+	 
+	 <string name="hidepass">隐藏密码</string>
+	 
 
 
 </resources>

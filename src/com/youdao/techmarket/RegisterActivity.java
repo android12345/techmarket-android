@@ -5,7 +5,6 @@ import org.json.JSONObject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
@@ -14,6 +13,7 @@ import android.widget.ImageView;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.youdao.techmarket.api.UserManager;
 import com.youdao.techmarket.utils.CommUtils;
+import com.youdao.techmarket.utils.LogUtil;
 
 /**
  * 用户注册界面
@@ -89,7 +89,7 @@ public class RegisterActivity extends BaseActivity {
 				@Override
 				public void onSuccess(JSONObject jsonObject) {
 					super.onSuccess(jsonObject);
-					Log.d("***************************", jsonObject.toString()) ;
+					LogUtil.d("***************************", jsonObject.toString()) ;
 					if(jsonObject.optInt("code") == 0){
 						Intent intent = new Intent(RegisterActivity.this,LoginActivity.class) ;
 						startActivity(intent) ;

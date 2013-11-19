@@ -7,6 +7,11 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+/**
+ * 帮助界面的适配器
+ * @author fengxue
+ *
+ */
 public class GuidePagerAdapter extends PagerAdapter{
 
 	private List<View> views;

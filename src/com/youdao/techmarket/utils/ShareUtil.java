@@ -48,12 +48,6 @@ public class ShareUtil {
 
 	private static final int TIMELINE_SUPPORTED_VERSION = 0x21020001;
 
-	// private static String uMengID ;
-
-	// public static void createUmeng(Activity context,String uMengID){
-	// SocializeConstants.APPKEY = uMengID;
-	// //ShareUtil.uMengID = uMengID ;
-	// }
 	/**
 	 * 解决严格模式 采用异步
 	 */

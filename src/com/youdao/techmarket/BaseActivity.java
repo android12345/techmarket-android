@@ -19,12 +19,11 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.webkit.WebView;
-
 
 import com.umeng.analytics.MobclickAgent;
 import com.youdao.techmarket.utils.AppManager;
+import com.youdao.techmarket.utils.LogUtil;
 import com.youdao.techmarket.widgets.DefineCustomProgressDialog;
 
 /**
@@ -106,7 +105,8 @@ public class BaseActivity extends Activity implements CordovaInterface{
 	   
 	    			//xayoudao://infomars:loadpageinfo/123456
 	    			   //             xayoudao://market:showPolicy
-	    			   Log.d("***************************************************************", url) ;
+	    			   
+	    			   LogUtil.d("***************************************************************", url) ;
 	    			
 					String infos[] = url.split(":");
 					if ("xayoudao".equals(infos[0])) {
@@ -128,25 +128,20 @@ public class BaseActivity extends Activity implements CordovaInterface{
 		           public void onPageStarted(WebView view, String url, Bitmap favicon) {  
 		              super.onPageStarted(view, url, favicon);  
 		              startProgressDialog() ;
-		               //ommUtils.visibleProgressBar(getActivity(),"正在加载，请稍后...") ;
 		           }  
 		  
 		           @Override  
 		           public void onPageFinished(WebView view, String url) {  
 		               super.onPageFinished(view, url);  
 			              stopProgressDialog() ;
-		               //CommUtils.removeProgressBar(getActivity()) ;
 		           }  
 		  
 		           @Override  
 		           public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {  
-		              // LogUtil.debug("onReceivedError " + url);  
 		               super.onReceivedError(view, errorCode, description, failingUrl);  
-		              // progressBar.setVisibility(View.GONE);  
-		              // errorView.setVisibility(View.VISIBLE);  
+		             
 		               stopProgressDialog() ;
-		               //cordovaWebView.loadUrl("file:///android_asset/www/index.html");  
-		              // CommUtils.removeProgressBar(getActivity()) ;
+		            
 		           }  
 		           @Override
 		        public void onLoadResource(WebView view, String url) {
@@ -161,15 +156,12 @@ public class BaseActivity extends Activity implements CordovaInterface{
 					public boolean shouldOverrideUrlLoading(WebView webView,String url) {
 		    			   
 						 //  onLoadUrlListener.onloadUrl(url) ;
-						//Log.d("***************************************************************", url) ;
-						  Log.d("***************************************************************", url) ;
+						LogUtil.d("***************************************************************", url) ;
 					String infos[] = url.split(":");
 					if ("xayoudao".equals(infos[0])) {
 						String jumptab = infos[1];
 						String info = infos[2];
 						jumptab = jumptab.replace("//", "") ;
-						//jumptab = jumptab.substring(1, jumptab.length()-1) ;
-						//Log.d("***************************************************************", jumptab) ;
 						Intent intent = new Intent(BaseActivity.this,MainActivity.class);
 						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						intent.putExtra("currenttab", jumptab);
@@ -185,26 +177,21 @@ public class BaseActivity extends Activity implements CordovaInterface{
 					public void onPageStarted(WebView view, String url,Bitmap favicon) {
 						super.onPageStarted(view, url, favicon);
 						startProgressDialog() ;
-						 //CommUtils.visibleProgressBar(getActivity(),"正在加载，请稍后...") ;
 					}
 					@Override
 					public void onPageFinished(WebView view, String url) {
 						super.onPageFinished(view, url);
 						  stopProgressDialog() ;
-						//CommUtils.removeProgressBar(getActivity()) ;
 					}
 					@Override
 					public void onReceivedError(WebView view, int errorCode,
 							String description, String failingUrl) {
 						super.onReceivedError(view, errorCode, description, failingUrl);
-						// cordovaWebView.loadUrl("file:///android_asset/www/index.html");  
 						stopProgressDialog() ;
-						//CommUtils.removeProgressBar(getActivity()) ;
 					}
 				};
 			}
-//	    cordovaWebView.getSettings().setJavaScriptEnabled(true); 
-//	    cordovaWebView.getSettings().setLoadWithOverviewMode(true);
+
 	    cordovaWebView.setWebViewClient(cordovaWebViewClient);  
 	    
 	    //没有网时调用 错误页面

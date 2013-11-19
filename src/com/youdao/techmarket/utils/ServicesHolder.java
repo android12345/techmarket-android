@@ -9,9 +9,6 @@ import com.youdao.techmarket.BuildConfig;
 /*
  * 服务器api地址的管理类
  * 根据运行的环境和模块，返回不同的api地址
- * http://api.ent.appmars.com  /v1    /tinyurl/build?url=$&level=1-5/5
-   http://market.xayoudao.com/apiproxy.php?action=register
- * 
  * 
  */
 
@@ -63,15 +60,14 @@ public class ServicesHolder {
 	 */
 	public static String api(int module) {
 		String path;
-		Log.d("BuildConfig.DEBUG", BuildConfig.DEBUG+"");
+		LogUtil.d("BuildConfig.DEBUG", BuildConfig.DEBUG+"");
 		if(BuildConfig.DEBUG){
 			path = env.get(DEBUGE) + mapmodule.get(module);	
-			Log.d("DEBUGE path", path);
+			LogUtil.d("DEBUGE path", path);
 		}else{
 			path = env.get(RELEASE) + mapmodule.get(module);
-			Log.d(" RELEASE path", path);
+			LogUtil.d(" RELEASE path", path);
 		}
-		//Toast.makeText(context, "ddd:"+path, 0).show() ;
 		Log.d("path", path);
 		return path;
 	}

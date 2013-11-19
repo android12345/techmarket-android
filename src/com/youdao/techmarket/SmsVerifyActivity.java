@@ -5,13 +5,13 @@ import org.json.JSONObject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.youdao.techmarket.api.UserManager;
 import com.youdao.techmarket.utils.CommUtils;
+import com.youdao.techmarket.utils.LogUtil;
 /**
  *找回密码--验证短信验证码(active) activity
  * @author fengxue
@@ -59,7 +59,7 @@ public class SmsVerifyActivity extends BaseActivity {
 				public void onSuccess(JSONObject jsonObject) {
 					super.onSuccess(jsonObject) ;
 					
-					Log.d("+++++++++++++++++++++++++++++++++++++++++++++++", jsonObject.toString()) ;
+					LogUtil.d("+++++++++++++++++++++++++++++++++++++++++++++++", jsonObject.toString()) ;
 					
 					int code = jsonObject.optInt("code") ;
 					String message = jsonObject.optString("message") ;

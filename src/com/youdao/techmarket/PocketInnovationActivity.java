@@ -2,6 +2,8 @@ package com.youdao.techmarket;
 
 import org.apache.cordova.CordovaWebView;
 
+import com.youdao.techmarket.utils.LogUtil;
+
 import android.os.Bundle;
 import android.util.Log;
 
@@ -51,20 +53,17 @@ public class PocketInnovationActivity extends BaseActivity {
 
 		String loadInfo = getIntent().getStringExtra("appendurl");
 
-		// Toast.makeText(PocketInnovationActivity.this, "made:"+loadInfo,
-		// 1).show() ;
 
 		if (loadInfo != null && !"".equals(loadInfo)) {
 			super.initAndLoadUrl(cordovaWebView,"file:///android_asset/innovation/index.html#" + loadInfo);
 
-			Log.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%innovation",
-					"file:///android_asset/innovation/index.html#" + loadInfo);
+			LogUtil.d("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%innovation",
+					"file:///android_asset/innovation/index.html#" + loadInfo) ;
 
 		} else {
 			super.initAndLoadUrl(cordovaWebView,"file:///android_asset/innovation/index.html");
 		}
-		// super.initAndLoadUrl(cordovaWebView,
-		// "file:///android_asset/innovation/index.html") ;
+
 	}
 
 	@Override
