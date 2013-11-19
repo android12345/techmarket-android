@@ -62,7 +62,7 @@
    <!-- <plugin name="AlarmClock" value="com.youdao.techmarket.plugin.AlarmClock"/> --> 
     <!-- 分享功能插件 -->
     <plugin name="Share" value="com.youdao.techmarket.plugin.Share"/>
-    <plugin name="CaptureSound" value="com.youdao.techmarket.plugin.CaptureSound"/>
+  
     
     <!-- 应用检查更新插件 -->
     <plugin name="CheckVersion" value="com.youdao.techmarket.plugin.CheckVersion"/>
