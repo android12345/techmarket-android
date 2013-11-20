@@ -56,7 +56,8 @@ public class SplashActivity extends BaseActivity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_splash) ;
 		
-		UmengUpdateAgent.update(this);
+		UmengUpdateAgent.update(this); //有新版本时提示更新
+		UmengUpdateAgent.setUpdateOnlyWifi(false) ;
 		
 		PushManager.startWork(getApplicationContext(),
 				PushConstants.LOGIN_TYPE_API_KEY, CommUtils.getMetaValue(SplashActivity.this, "api_key"));
