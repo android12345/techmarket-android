@@ -20,6 +20,7 @@ import android.view.WindowManager;
 
 import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
+import com.umeng.update.UmengUpdateAgent;
 import com.youdao.techmarket.utils.CommUtils;
 
 /**
@@ -54,6 +55,8 @@ public class SplashActivity extends BaseActivity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.setContentView(R.layout.activity_splash) ;
+		
+		UmengUpdateAgent.update(this);
 		
 		PushManager.startWork(getApplicationContext(),
 				PushConstants.LOGIN_TYPE_API_KEY, CommUtils.getMetaValue(SplashActivity.this, "api_key"));
